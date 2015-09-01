@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ASCII"?>
+
+<!-- XML data must be validated.
+     If XML validation failed ,you probably have a corrupted data ! 
+-->
+
+<!ELEMENT x86ins (common+)>
+
+<!ELEMENT common (brief,ins+,oprndenc*)>
+
+<!-- cpuid and dscrp elements are optional. -->
+<!ELEMENT ins (mnem,args,opc,cpuid*,dscrp*)>
+<!-- If cpuid tag found , flag tag must exists. -->
+<!ELEMENT cpuid (flag+)>
+<!-- If oprndenc tag found , all oprndX must exists. -->
+<!ELEMENT oprndenc (oprnd1,oprnd2,oprnd3,oprnd4)>
+
+<!ELEMENT brief (#PCDATA)>
+<!ELEMENT mnem (#PCDATA)>
+<!ELEMENT args (#PCDATA)>
+<!ELEMENT opc (#PCDATA)>
+<!ELEMENT flag (#PCDATA)>
+<!ELEMENT dscrp (#PCDATA)>
+<!ELEMENT oprnd1 (#PCDATA)>
+<!ELEMENT oprnd2 (#PCDATA)>
+<!ELEMENT oprnd3 (#PCDATA)>
+<!ELEMENT oprnd4 (#PCDATA)>
+
+<!-- version attribute must be specified !-->
+<!ATTLIST x86ins version CDATA #REQUIRED>
+<!ATTLIST ins x32m CDATA "V"> <!-- x32m default to Valid if not specified.-->
+<!ATTLIST ins x64m CDATA "V"> <!-- x64m default to Valid if not specified.-->
+<!ATTLIST opc openc CDATA "">
+<!ATTLIST oprndenc openc CDATA #REQUIRED>
+
