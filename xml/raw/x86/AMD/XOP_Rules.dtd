@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ASCII"?>
+<!-- XOP Rules -->
+
+<!ELEMENT instrs (common+)>
+<!ELEMENT common (brief,ins+)>
+<!ELEMENT ins (mnem,args,opc)>
+
+<!ELEMENT brief (#PCDATA)>
+<!ELEMENT mnem (#PCDATA)>
+<!ELEMENT args (#PCDATA)>
+<!ELEMENT opc (#PCDATA)>
+
+
+
+<!ATTLIST instrs version CDATA #REQUIRED>

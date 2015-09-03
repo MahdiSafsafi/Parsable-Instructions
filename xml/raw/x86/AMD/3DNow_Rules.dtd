@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ASCII"?>
+<!-- 3DNow rules -->
+
+<!ELEMENT instrs (common+)>
+<!ELEMENT common (brief,ins)>
+<!ELEMENT ins (mnem,args,opc,dscrp)>
+
+<!ELEMENT brief (#PCDATA)>
+<!ELEMENT mnem (#PCDATA)>
+<!ELEMENT args (#PCDATA)>
+<!ELEMENT opc (#PCDATA)>
+<!ELEMENT dscrp (#PCDATA)>
+
+
+<!ATTLIST instrs version CDATA #REQUIRED>

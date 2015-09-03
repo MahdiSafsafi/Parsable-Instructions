@@ -1,0 +1,1119 @@
+<?xml version="1.0" encoding="ASCII"?>
+<!DOCTYPE instrs SYSTEM "SSE5_Rules.dtd">
+<!-- Copyright (c) 2015 Mahdi Safsafi
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+ -->
+<!--   https://github.com/MahdiSafsafi/Parsable-Instructions   -->
+<!-- 
+  This XML file includes all instructions found in :
+  128-Bit SSE5 Instruction Set Pub No 43479 Rev 3.01 Date August 2007 document.
+ -->
+<instrs version="1.00">
+	<common>
+		<brief>COMPD--Compare Vector Double-Precision Floating-Point.</brief>
+		<dscrp>Compares two packed double-precision floating-point values in XMM2 register by XMM3 register or 128-bit memory location and writes 64 bits of all 1s (TRUE) or all 0s (FALSE) in the destination (XMM1 register).</dscrp>
+		<ins>
+			<mnem>COMPD</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,imm8</args>
+			<opc>0F 25 2D /r /drex0 ib</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>COMPS--Compare Vector Single-Precision Floating-Point.</brief>
+		<dscrp>Compares four packed single-precision floating-point values in XMM2 register by XMM3 register or 128-bit memory location and writes 32 bits of all 1s (TRUE) or all 0s (FALSE) in the destination (XMM1 register).</dscrp>
+		<ins>
+			<mnem>COMPS</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,imm8</args>
+			<opc>0F 25 2C /r /drex0 ib</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>COMSD--Compare Scalar Double-Precision Floating-Point.</brief>
+		<dscrp>Compares the low-order double-precision floating-point value in XMM2 register by the low-order double-precision floating-point value in XMM3 register or 64-bit memory location and writes 64 bits of all 1s (TRUE) or all 0s (FALSE) in the low-order quadword in the destination (XMM1 register).</dscrp>
+		<ins>
+			<mnem>COMSD</mnem>
+			<args>xmm1,xmm2,xmm3/mem64,imm8</args>
+			<opc>0F 25 2F /r /drex0 ib</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>COMSS--Compare Scalar Single-Precision Floating-Point.</brief>
+		<dscrp>Compares the low-order single-precision floating-point value in XMM2 register by the low-order single-precision floating-point value in XMM3 register or 32-bit memory location and writes 32 bits of all 1s (TRUE) or all 0s (FALSE) in the low-order doubleword in the destination (XMM1 register).</dscrp>
+		<ins>
+			<mnem>COMSS</mnem>
+			<args>xmm1,xmm2,xmm3/mem32,imm8</args>
+			<opc>0F 25 2E /r /drex0 ib</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>CVTPH2PS--Convert 16-Bit Floating-Point to Single-Precision Floating-Point.</brief>
+		<dscrp>Converts four packed 16-bit floating-point values in the low 64 bits of XMM2 or 64-bit memory location to four single-precision floating-point values and writes the results in the destination (XMM1 register).</dscrp>
+		<ins>
+			<mnem>CVTPH2PS</mnem>
+			<args>xmm1,xmm2/mem64</args>
+			<opc>0F 7A 30 /r</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>CVTPS2PH--Convert Single-Precision Floating-Point to 16-Bit Floating-Point.</brief>
+		<dscrp>Converts four packed single-precision floating-point values in XMM2 to four 16-bit floating-point values and writes the results in the destination (XMM1 register or memory location).</dscrp>
+		<ins>
+			<mnem>CVTPS2PH</mnem>
+			<args>xmm1/mem64,xmm2</args>
+			<opc>0F 7A 31 /r</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>FMADDPD--Multiply and Add Packed Double-Precision Floating-Point.</brief>
+		<dscrp>Multiplies two packed double-precision floating-point values in the second and third operands, then adds the products to the fourth operand and writes the results in the destination (first operand).</dscrp>
+		<ins>
+			<mnem>FMADDPD</mnem>
+			<args>xmm1,xmm1,xmm2,xmm3/mem128</args>
+			<opc>0F 24 01 /r /drex0</opc>
+		</ins>
+		<ins>
+			<mnem>FMADDPD</mnem>
+			<args>xmm1,xmm1,xmm3/mem128,xmm2</args>
+			<opc>0F 24 01 /r /drex1</opc>
+		</ins>
+		<ins>
+			<mnem>FMADDPD</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,xmm1</args>
+			<opc>0F 24 05 /r /drex0</opc>
+		</ins>
+		<ins>
+			<mnem>FMADDPD</mnem>
+			<args>xmm1,xmm3/mem128,xmm2,xmm1</args>
+			<opc>0F 24 05 /r /drex1</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>FMADDPS--Multiply and Add Packed Single-Precision Floating-Point.</brief>
+		<dscrp>Multiplies four packed single-precision floating-point values in the second and third operands, then adds the products to the fourth operand and writes the results in the destination (XMM1 register).</dscrp>
+		<ins>
+			<mnem>FMADDPS</mnem>
+			<args>xmm1,xmm1,xmm2,xmm3/mem128</args>
+			<opc>0F 24 00 /r /drex0</opc>
+		</ins>
+		<ins>
+			<mnem>FMADDPS</mnem>
+			<args>xmm1,xmm1,xmm3/mem128,xmm2</args>
+			<opc>0F 24 00 /r /drex1</opc>
+		</ins>
+		<ins>
+			<mnem>FMADDPS</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,xmm1</args>
+			<opc>0F 24 04 /r /drex0</opc>
+		</ins>
+		<ins>
+			<mnem>FMADDPS</mnem>
+			<args>xmm1,xmm3/mem128,xmm2,xmm1</args>
+			<opc>0F 24 04 /r /drex1</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>FMADDSD--Multiply and Accumulate Scalar Double-Precision Floating-Point.</brief>
+		<dscrp>Multiplies double-precision floating-point value in the loworder quadword of the second and third operands, then adds the product to the double-precision floating-point value in the loworder quadword of the fourth operand and writes the result in the low order quadword of the destination (XMM1 register).</dscrp>
+		<ins>
+			<mnem>FMADDSD</mnem>
+			<args>xmm1,xmm1,xmm2,xmm3/mem64</args>
+			<opc>0F 24 03 /r /drex0</opc>
+		</ins>
+		<ins>
+			<mnem>FMADDSD</mnem>
+			<args>xmm1,xmm1,xmm3/mem64,xmm2</args>
+			<opc>0F 24 03 /r /drex1</opc>
+		</ins>
+		<ins>
+			<mnem>FMADDSD</mnem>
+			<args>xmm1,xmm2,xmm3/mem64,xmm1</args>
+			<opc>0F 24 07 /r /drex0</opc>
+		</ins>
+		<ins>
+			<mnem>FMADDSD</mnem>
+			<args>xmm1,xmm3/mem64,xmm2,xmm1</args>
+			<opc>0F 24 07 /r /drex1</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>FMADDSS--Multiply and Add Scalar Single-Precision Floating-Point.</brief>
+		<dscrp>Multiplies packed single-precision floating-point values in low-order doubleword of the second and third operands, then adds the product to low-order doubleword of the fourth operand and writes the result in the low-order doubleword of the destination (XMM1 register).</dscrp>
+		<ins>
+			<mnem>FMADDSS</mnem>
+			<args>xmm1,xmm1,xmm2,xmm3/mem32</args>
+			<opc>0F 24 02 /r /drex0</opc>
+		</ins>
+		<ins>
+			<mnem>FMADDSS</mnem>
+			<args>xmm1,xmm1,xmm3/mem32,xmm2</args>
+			<opc>0F 24 02 /r /drex1</opc>
+		</ins>
+		<ins>
+			<mnem>FMADDSS</mnem>
+			<args>xmm1,xmm2,xmm3/mem32,xmm1</args>
+			<opc>0F 24 06 /r /drex0</opc>
+		</ins>
+		<ins>
+			<mnem>FMADDSS</mnem>
+			<args>xmm1,xmm3/mem32,xmm2,xmm1</args>
+			<opc>0F 24 06 /r /drex1</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>FMSUBPD--Multiply and Subtract Packed Double-Precision Floating-Point.</brief>
+		<dscrp>Multiplies two packed double-precision floating-point values in the second and third operands, then subtracts the corresponding two packed double-precision floating-point values in the fourth operand from the products and writes the quadword results in the destination (XMM1 register).</dscrp>
+		<ins>
+			<mnem>FMSUBPD</mnem>
+			<args>xmm1,xmm1,xmm2,xmm3/mem128</args>
+			<opc>0F 24 09 /r /drex0</opc>
+		</ins>
+		<ins>
+			<mnem>FMSUBPD</mnem>
+			<args>xmm1,xmm1,xmm3/mem128,xmm2</args>
+			<opc>0F 24 09 /r /drex1</opc>
+		</ins>
+		<ins>
+			<mnem>FMSUBPD</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,xmm1</args>
+			<opc>0F 24 0D /r /drex0</opc>
+		</ins>
+		<ins>
+			<mnem>FMSUBPD</mnem>
+			<args>xmm1,xmm3/mem128,xmm2,xmm1</args>
+			<opc>0F 24 0D /r /drex1</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>FMSUBPS--Multiply and Subtract Packed Single-Precision Floating-Point.</brief>
+		<dscrp>Multiplies four packed single-precision floating-point values in the first and second source operands, then subtracts the corresponding four packed single-precision floating-point values in the third operand from the products and writes the doubleword results in the destination (XMM1 register).</dscrp>
+		<ins>
+			<mnem>FMSUBPS</mnem>
+			<args>xmm1,xmm1,xmm2,xmm3/mem128</args>
+			<opc>0F 24 08 /r /drex0</opc>
+		</ins>
+		<ins>
+			<mnem>FMSUBPS</mnem>
+			<args>xmm1,xmm1,xmm3/mem128,xmm2</args>
+			<opc>0F 24 08 /r /drex1</opc>
+		</ins>
+		<ins>
+			<mnem>FMSUBPS</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,xmm1</args>
+			<opc>0F 24 0C /r /drex0</opc>
+		</ins>
+		<ins>
+			<mnem>FMSUBPS</mnem>
+			<args>xmm1,xmm3/mem128,xmm2,xmm1</args>
+			<opc>0F 24 0C /r /drex1</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>FMSUBSD--Multiply and Subtract Scalar Double-Precision Floating-Point.</brief>
+		<dscrp>Multiplies double-precision floating-point value in the loworder quadword of the second and third operands, then subtracts the double-precision floating-point values in the fourth operand from the product and writes the result in the low order quadword of the destination (XMM1 register).</dscrp>
+		<ins>
+			<mnem>FMSUBSD</mnem>
+			<args>xmm1,xmm1,xmm2,xmm3/mem64</args>
+			<opc>0F 24 0B /r /drex0</opc>
+		</ins>
+		<ins>
+			<mnem>FMSUBSD</mnem>
+			<args>xmm1,xmm1,xmm3/mem64,xmm2</args>
+			<opc>0F 24 0B /r /drex1</opc>
+		</ins>
+		<ins>
+			<mnem>FMSUBSD</mnem>
+			<args>xmm1,xmm2,xmm3/mem64,xmm1</args>
+			<opc>0F 24 0F /r /drex0</opc>
+		</ins>
+		<ins>
+			<mnem>FMSUBSD</mnem>
+			<args>xmm1,xmm3/mem64,xmm2,xmm1</args>
+			<opc>0F 24 0F /r /drex1</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>FMSUBSS--Multiply and Subtract Scalar Single-Precision Floating-Point.</brief>
+		<dscrp>Multiplies single-precision floating-point value in the loworder doubleword of the second and third operands, then subtracts the single-precision floating-point values in the low-order doubleword of the fourth operand from the product and writes the result in the low-order doubleword of the destination (XMM1 register).</dscrp>
+		<ins>
+			<mnem>FMSUBSS</mnem>
+			<args>xmm1,xmm1,xmm2,xmm3/mem32</args>
+			<opc>0F 24 0A /r /drex0</opc>
+		</ins>
+		<ins>
+			<mnem>FMSUBSS</mnem>
+			<args>xmm1,xmm1,xmm3/mem32,xmm2</args>
+			<opc>0F 24 0A /r /drex1</opc>
+		</ins>
+		<ins>
+			<mnem>FMSUBSS</mnem>
+			<args>xmm1,xmm2,xmm3/mem32,xmm1</args>
+			<opc>0F 24 0E /r /drex0</opc>
+		</ins>
+		<ins>
+			<mnem>FMSUBSS</mnem>
+			<args>xmm1,xmm3/mem32,xmm2,xmm1</args>
+			<opc>0F 24 0E /r /drex1</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>FNMADDPD--Negative Multiply and Add Packed Double-Precision Floating-Point.</brief>
+		<dscrp>Multiplies two packed double-precision floating-point values in the second and third operands, then negates the products and adds them to the fourth operand and writes the results in the destination (XMM1 register).</dscrp>
+		<ins>
+			<mnem>FNMADDPD</mnem>
+			<args>xmm1,xmm1,xmm2,xmm3/mem128</args>
+			<opc>0F 24 11 /r /drex0</opc>
+		</ins>
+		<ins>
+			<mnem>FNMADDPD</mnem>
+			<args>xmm1,xmm1,xmm3/mem128,xmm2</args>
+			<opc>0F 24 11 /r /drex1</opc>
+		</ins>
+		<ins>
+			<mnem>FNMADDPD</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,xmm1</args>
+			<opc>0F 24 15 /r /drex0</opc>
+		</ins>
+		<ins>
+			<mnem>FNMADDPD</mnem>
+			<args>xmm1,xmm3/mem128,xmm2,xmm1</args>
+			<opc>0F 24 15 /r /drex1</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>FNMADDPS--Negative Multiply and Add Packed Single-Precision Floating-Point.</brief>
+		<dscrp>Multiplies four packed single-precision floating-point values in the second and third operands, then negates the products and adds them to the fourth operand and writes the results in the destination (XMM1 register).</dscrp>
+		<ins>
+			<mnem>FNMADDPS</mnem>
+			<args>xmm1,xmm1,xmm2,xmm3/mem128</args>
+			<opc>0F 24 10 /r /drex0</opc>
+		</ins>
+		<ins>
+			<mnem>FNMADDPS</mnem>
+			<args>xmm1,xmm1,xmm3/mem128,xmm2</args>
+			<opc>0F 24 10 /r /drex1</opc>
+		</ins>
+		<ins>
+			<mnem>FNMADDPS</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,xmm1</args>
+			<opc>0F 24 14 /r /drex0</opc>
+		</ins>
+		<ins>
+			<mnem>FNMADDPS</mnem>
+			<args>xmm1,xmm3/mem128,xmm2,xmm1</args>
+			<opc>0F 24 14 /r /drex1</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>FNMADDSD--Negate Multiply and Add Scalar Double-Precision Floating-Point.</brief>
+		<dscrp>Multiplies double-precision floating-point value in the loworder quadword of the second and third operands, then negates the product and adds it to the double-precision floating-point value in the loworder quadword of the fourth operand and writes the result in the low order quadword of the destination (XMM1 register).</dscrp>
+		<ins>
+			<mnem>FNMADDSD</mnem>
+			<args>xmm1,xmm1,xmm2,xmm3/mem64</args>
+			<opc>0F 24 13 /r /drex0</opc>
+		</ins>
+		<ins>
+			<mnem>FNMADDSD</mnem>
+			<args>xmm1,xmm1,xmm3/mem64,xmm2</args>
+			<opc>0F 24 13 /r /drex1</opc>
+		</ins>
+		<ins>
+			<mnem>FNMADDSD</mnem>
+			<args>xmm1,xmm2,xmm3/mem64,xmm1</args>
+			<opc>0F 24 17 /r /drex0</opc>
+		</ins>
+		<ins>
+			<mnem>FNMADDSD</mnem>
+			<args>xmm1,xmm3/mem64,xmm2,xmm1</args>
+			<opc>0F 24 17 /r /drex1</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>FNMADDSS--Negative Multiply and Add Scalar Single-Precision Floating-Point.</brief>
+		<dscrp>Multiplies single-precision floating-point values in loworder doubleword of the second and third operands, then negates the product and adds it to low-order doubleword of fourth operand and writes the result in the loworder doubleword of the destination (XMM1 register).</dscrp>
+		<ins>
+			<mnem>FNMADDSS</mnem>
+			<args>xmm1,xmm1,xmm2,xmm3/mem32</args>
+			<opc>0F 24 12 /r /drex0</opc>
+		</ins>
+		<ins>
+			<mnem>FNMADDSS</mnem>
+			<args>xmm1,xmm1,xmm3/mem32,xmm2</args>
+			<opc>0F 24 12 /r /drex1</opc>
+		</ins>
+		<ins>
+			<mnem>FNMADDSS</mnem>
+			<args>xmm1,xmm2,xmm3/mem32,xmm1</args>
+			<opc>0F 24 16 /r /drex0</opc>
+		</ins>
+		<ins>
+			<mnem>FNMADDSS</mnem>
+			<args>xmm1,xmm3/mem32,xmm2,xmm1</args>
+			<opc>0F 24 16 /r /drex1</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>FNMSUBPD--Negative Multiply and Subtract Packed Double-Precision Floating-Point.</brief>
+		<dscrp>Multiplies two packed double-precision floating-point values in the second and third operands, then subtracts the corresponding two packed double-precision floatingpoint values in the fourth operand from the negated products and writes the quadword results in the destination (XMM1 register).</dscrp>
+		<ins>
+			<mnem>FNMSUBPD</mnem>
+			<args>xmm1,xmm1,xmm2,xmm3/mem128</args>
+			<opc>0F 24 19 /r /drex0</opc>
+		</ins>
+		<ins>
+			<mnem>FNMSUBPD</mnem>
+			<args>xmm1,xmm1,xmm3/mem128,xmm2</args>
+			<opc>0F 24 19 /r /drex1</opc>
+		</ins>
+		<ins>
+			<mnem>FNMSUBPD</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,xmm1</args>
+			<opc>0F 24 1D /r /drex0</opc>
+		</ins>
+		<ins>
+			<mnem>FNMSUBPD</mnem>
+			<args>xmm1,xmm3/mem128,xmm2,xmm1</args>
+			<opc>0F 24 1D /r /drex1</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>FNMSUBPS--Negative Multiply and Subtract Packed Single-Precision Floating-Point.</brief>
+		<dscrp>Multiplies four packed single-precision floating-point values in the second and third operands, then subtracts the corresponding four packed single-precision floating-point values in the fourth operand from the negated products and writes the doubleword results in the destination (XMM1 register).</dscrp>
+		<ins>
+			<mnem>FNMSUBPS</mnem>
+			<args>xmm1,xmm1,xmm2,xmm3/mem128</args>
+			<opc>0F 24 18 /r /drex0</opc>
+		</ins>
+		<ins>
+			<mnem>FNMSUBPS</mnem>
+			<args>xmm1,xmm1,xmm3/mem128,xmm2</args>
+			<opc>0F 24 18 /r /drex1</opc>
+		</ins>
+		<ins>
+			<mnem>FNMSUBPS</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,xmm1</args>
+			<opc>0F 24 1C /r /drex0</opc>
+		</ins>
+		<ins>
+			<mnem>FNMSUBPS</mnem>
+			<args>xmm1,xmm3/mem128,xmm2,xmm1</args>
+			<opc>0F 24 1C /r /drex1</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>FNMSUBSD--Negative Multiply and Subtract Scalar Double-Precision Floating-Point.</brief>
+		<dscrp>Multiplies double-precision floating-point value in the loworder quadword of the second and third operands, then subtracts the double-precision floating-point values in the fourth operand from the negated product and writes the result in the low order quadword of the destination (XMM1 register).</dscrp>
+		<ins>
+			<mnem>FNMSUBSD</mnem>
+			<args>xmm1,xmm1,xmm2,xmm3/mem64</args>
+			<opc>0F 24 1B /r /drex0</opc>
+		</ins>
+		<ins>
+			<mnem>FNMSUBSD</mnem>
+			<args>xmm1,xmm1,xmm3/mem64,xmm2</args>
+			<opc>0F 24 1B /r /drex1</opc>
+		</ins>
+		<ins>
+			<mnem>FNMSUBSD</mnem>
+			<args>xmm1,xmm2,xmm3/mem64,xmm1</args>
+			<opc>0F 24 1F /r /drex0</opc>
+		</ins>
+		<ins>
+			<mnem>FNMSUBSD</mnem>
+			<args>xmm1,xmm3/mem64,xmm2,xmm1</args>
+			<opc>0F 24 1F /r /drex1</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>FNMSUBSS--Negative Multiply and Subtract Scalar Single-Precision Floating-Point.</brief>
+		<dscrp>Multiplies single-precision floating-point value in the loworder doubleword of the second and third operands, then subtracts the single-precision floating-point values in the loworder doubleword of the fourth operand from the negated product and writes the result in the low-order doubleword of the destination (XMM1 register).</dscrp>
+		<ins>
+			<mnem>FNMSUBSS</mnem>
+			<args>xmm1,xmm1,xmm2,xmm3/mem32</args>
+			<opc>0F 24 1A /r /drex0</opc>
+		</ins>
+		<ins>
+			<mnem>FNMSUBSS</mnem>
+			<args>xmm1,xmm1,xmm3/mem32,xmm2</args>
+			<opc>0F 24 1A /r /drex1</opc>
+		</ins>
+		<ins>
+			<mnem>FNMSUBSS</mnem>
+			<args>xmm1,xmm2,xmm3/mem32,xmm1</args>
+			<opc>0F 24 1E /r /drex0</opc>
+		</ins>
+		<ins>
+			<mnem>FNMSUBSS</mnem>
+			<args>xmm1,xmm3/mem32,xmm2,xmm1</args>
+			<opc>0F 24 1E /r /drex1</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>FRCZPD--Extract Fraction Packed Double-Precision Floating-Point.</brief>
+		<dscrp>Extracts the fractional portion of each of two packed double-precision floating-point values in XMM2 register or 128-bit memory location and writes quadword results in the destination (XMM1 register).</dscrp>
+		<ins>
+			<mnem>FRCZPD</mnem>
+			<args>xmm1,xmm2/mem128</args>
+			<opc>0F 7A 11 /r</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>FRCZPS--Extract Fraction Packed Single-Precision Floating-Point.</brief>
+		<dscrp>Extracts the fractional portion of each of four packed single-precision floating-point values in XMM2 register or 128-bit memory location and writes corresponding doubleword results in the destination (XMM1 register).</dscrp>
+		<ins>
+			<mnem>FRCZPS</mnem>
+			<args>xmm1,xmm2/mem128</args>
+			<opc>0F 7A 10 /r</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>FRCZSD--Extract Fraction Scalar Double-Precision Floating-Point.</brief>
+		<dscrp>Extracts the fractional portion of the double-precision floating-point value in the low-order quadword of the XMM2 register or 64-bit memory location and writes the result in the low-order quadword of the destination (XMM1 register).</dscrp>
+		<ins>
+			<mnem>FRCZSD</mnem>
+			<args>xmm1,xmm2/mem64</args>
+			<opc>0F 7A 13 /r</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>FRCZSS--Extract Fraction Scalar Single-Precision Floating Point.</brief>
+		<dscrp>Extracts the fractional portion of the single-precision floating-point value in the low-order doubleword of the XMM2 register or 32-bit memory location and writes the result in the low-order doubleword of the destination (XMM1 register).</dscrp>
+		<ins>
+			<mnem>FRCZSS</mnem>
+			<args>xmm1,xmm2/mem32</args>
+			<opc>0F 7A 12 /r</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>PCMOV--Vector Conditional Moves.</brief>
+		<dscrp>For each bit position of the 128 bit field, moves the bit value from the second source operand to the destination (xmm1 register) when the associated bit in the fourth source operand =1; otherwise, moves bit value from the third source operand to the destination.</dscrp>
+		<ins>
+			<mnem>PCMOV</mnem>
+			<args>xmm1,xmm1,xmm2,xmm3/mem128</args>
+			<opc>0F 24 22 /r /drex0</opc>
+		</ins>
+		<ins>
+			<mnem>PCMOV</mnem>
+			<args>xmm1,xmm1,xmm3/mem128,xmm2</args>
+			<opc>0F 24 22 /r /drex1</opc>
+		</ins>
+		<ins>
+			<mnem>PCMOV</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,xmm1</args>
+			<opc>0F 24 26 /r /drex0</opc>
+		</ins>
+		<ins>
+			<mnem>PCMOV</mnem>
+			<args>xmm1,xmm3/mem128,xmm2,xmm1</args>
+			<opc>0F 24 26 /r /drex1</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>PCOMB--Compare Vector Signed Bytes.</brief>
+		<dscrp>Compares signed bytes in XMM2 register with corresponding byte in XMM3 register or 128-bit memory location and writes 8 bits of all 1s (TRUE) or all 0s (FALSE) in the corresponding byte in the destination (XMM1 register).</dscrp>
+		<ins>
+			<mnem>PCOMB</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,imm8</args>
+			<opc>0F 25 4C /r /drex0 ib</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>PCOMD--Compare Vector Signed Doublewords.</brief>
+		<dscrp>Compares signed doublewords in XMM2 register with corresponding doubleword in XMM3 register or 128-bit memory location and writes 32 bits of all 1s (TRUE) or all 0s (FALSE) in the corresponding doubleword in the destination (XMM1 register).</dscrp>
+		<ins>
+			<mnem>PCOMD</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,imm8</args>
+			<opc>0F 25 4E /r /drex0 ib</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>PCOMQ--Compare Vector Signed Quadwords.</brief>
+		<dscrp>Compares signed quadwords in XMM2 register with corresponding quadword in XMM3 register or 128-bit memory location and writes 64 bits of all 1s (TRUE) or all 0s (FALSE) in the corresponding quadword in the destination (XMM1 register).</dscrp>
+		<ins>
+			<mnem>PCOMQ</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,imm8</args>
+			<opc>0F 25 4F /r /drex0 ib</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>PCOMUB--Compare Vector Unsigned Bytes.</brief>
+		<dscrp>Compares unsigned bytes in XMM2 register with corresponding byte in XMM3 register or 128-bit memory location and writes 8 bits of all 1s (TRUE) or all 0s (FALSE) in the corresponding byte in the destination (XMM1 register).</dscrp>
+		<ins>
+			<mnem>PCOMUB</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,imm8</args>
+			<opc>0F 25 6C /r /drex0 ib</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>PCOMUD--Compare Vector Unsigned Doublewords.</brief>
+		<dscrp>Compares unsigned doublewords in XMM2 register with corresponding doubleword in XMM3 register or 128-bit memory location and writes 32 bits of all 1s (TRUE) or all 0s (FALSE) in the corresponding doubleword in the destination (XMM1 register).</dscrp>
+		<ins>
+			<mnem>PCOMUD</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,imm8</args>
+			<opc>0F 25 6E /r /drex0 ib</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>PCOMUQ--Compare Vector Unsigned Quadwords.</brief>
+		<dscrp>Compares unsigned quadwords in XMM2 register with corresponding quadword in XMM3 register or 128-bit memory location and writes 64 bits of all 1s (TRUE) or all 0s (FALSE) in the corresponding quadword in the destination (XMM1 register).</dscrp>
+		<ins>
+			<mnem>PCOMUQ</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,imm8</args>
+			<opc>0F 25 6F /r /drex0 ib</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>PCOMUW--Compare Vector Unsigned Words.</brief>
+		<dscrp>Compares unsigned words in XMM2 register with corresponding word in XMM3 register or 128-bit memory location and writes 16 bits of all 1s (TRUE) or all 0s (FALSE) in the corresponding word in the destination (XMM1 register).</dscrp>
+		<ins>
+			<mnem>PCOMUW</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,imm8</args>
+			<opc>0F 25 6D /r /drex0 ib</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>PCOMW--Compare Vector Signed Words.</brief>
+		<dscrp>Compares signed words in XMM2 register with corresponding word in XMM3 register or 128-bit memory location and writes 16 bits of all 1s (TRUE) or all 0s (FALSE) in the corresponding word in the destination (XMM1 register).</dscrp>
+		<ins>
+			<mnem>PCOMW</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,imm8</args>
+			<opc>0F 25 4D /r /drex0 ib</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>PERMPD--Permute Double-Precision Floating-Point.</brief>
+		<dscrp>For each double-precision result, uses corresponding control byte in the fourth operand to perform an operation on one of 4 double-precision operands from the second and third source operands and writes result in destination (xmm1 register).</dscrp>
+		<ins>
+			<mnem>PERMPD</mnem>
+			<args>xmm1,xmm1,xmm2,xmm3/mem128</args>
+			<opc>0F 24 21 /r /drex0</opc>
+		</ins>
+		<ins>
+			<mnem>PERMPD</mnem>
+			<args>xmm1,xmm1,xmm3/mem128,xmm2</args>
+			<opc>0F 24 21 /r /drex1</opc>
+		</ins>
+		<ins>
+			<mnem>PERMPD</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,xmm1</args>
+			<opc>0F 24 25 /r /drex0</opc>
+		</ins>
+		<ins>
+			<mnem>PERMPD</mnem>
+			<args>xmm1,xmm3/mem128,xmm2,xmm1</args>
+			<opc>0F 24 25 /r /drex1</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>PERMPS--Permute and Modify Single-Precision Floating Point.</brief>
+		<dscrp>For each single-precision result, uses corresponding control byte in the fourth operand to perform an operation on one of 8 single-precision operands from the second and third source operands and writes result in destination (xmm1 register).</dscrp>
+		<ins>
+			<mnem>PERMPS</mnem>
+			<args>xmm1,xmm1,xmm2,xmm3/mem128</args>
+			<opc>0F 24 20 /r /drex0</opc>
+		</ins>
+		<ins>
+			<mnem>PERMPS</mnem>
+			<args>xmm1,xmm1,xmm3/mem128,xmm2</args>
+			<opc>0F 24 20 /r /drex1</opc>
+		</ins>
+		<ins>
+			<mnem>PERMPS</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,xmm1</args>
+			<opc>0F 24 24 /r /drex0</opc>
+		</ins>
+		<ins>
+			<mnem>PERMPS</mnem>
+			<args>xmm1,xmm3/mem128,xmm2,xmm1</args>
+			<opc>0F 24 24 /r /drex1</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>PHADDBD--Packed Horizontal Add Signed Byte to Signed Doubleword.</brief>
+		<dscrp>Adds four successive 8-bit signed integer values in an XMM register or 128-bit memory location and packs the 32-bit results in the destination XMM register.</dscrp>
+		<ins>
+			<mnem>PHADDBD</mnem>
+			<args>xmm1,xmm2/mem128</args>
+			<opc>0F 7A 42 /r</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>PHADDBQ--Packed Horizontal Add Signed Byte to Signed Quadword.</brief>
+		<dscrp>Adds eight successive 8-bit signed integer values in an XMM register or 128-bit memory location and packs the 32-bit results in the destination XMM register.</dscrp>
+		<ins>
+			<mnem>PHADDBQ</mnem>
+			<args>xmm1,xmm2/mem128</args>
+			<opc>0F 7A 43 /r</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>PHADDBW--Packed Horizontal Add Signed Byte to Signed Word.</brief>
+		<dscrp>Adds each adjacent pair of 8-bit signed integer values in an XMM register or 128-bit memory location and packs the 16-bit results in the destination XMM register.</dscrp>
+		<ins>
+			<mnem>PHADDBW</mnem>
+			<args>xmm1,xmm2/mem128</args>
+			<opc>0F 7A 41 /r</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>PHADDDQ--Packed Horizontal Add Signed Doubleword to Signed Quadword.</brief>
+		<dscrp>Adds each adjacent pair of 32-bit signed integer values in an XMM register or 128-bit memory location and packs the 64-bit results in the destination XMM register.</dscrp>
+		<ins>
+			<mnem>PHADDDQ</mnem>
+			<args>xmm1,xmm2/mem128</args>
+			<opc>0F 7A 4B /r</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>PHADDUBD--Packed Horizontal Add Unsigned Byte to Doubleword.</brief>
+		<dscrp>Adds four successive 8-bit unsigned integer values in an XMM register or 128-bit memory location and packs the 32-bit results in the destination XMM register.</dscrp>
+		<ins>
+			<mnem>PHADDUBD</mnem>
+			<args>xmm1,xmm2/mem128</args>
+			<opc>0F 7A 52 /r</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>PHADDUBQ--Packed Horizontal Add Unsigned Byte to Quadword.</brief>
+		<dscrp>Adds eight successive 8-bit unsigned integer values in an XMM register or 128-bit memory location and packs the 64-bit results in the destination XMM register.</dscrp>
+		<ins>
+			<mnem>PHADDUBQ</mnem>
+			<args>xmm1,xmm2/mem128</args>
+			<opc>0F 7A 53 /r</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>PHADDUBW--Packed Horizontal Add Unsigned Byte to Word.</brief>
+		<dscrp>Adds each adjacent pair of 8-bit unsigned integer values in an XMM register or 128-bit memory location and packs the 16-bit results in the destination XMM register.</dscrp>
+		<ins>
+			<mnem>PHADDUBW</mnem>
+			<args>xmm1,xmm2/mem128</args>
+			<opc>0F 7A 51 /r</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>PHADDUDQ--Packed Horizontal Add Unsigned Doubleword to Quadword.</brief>
+		<dscrp>Adds each adjacent pair of 32-bit unsigned integer values in an XMM register or 128-bit memory location and packs the 64-bit results in the destination XMM register.</dscrp>
+		<ins>
+			<mnem>PHADDUDQ</mnem>
+			<args>xmm1,xmm2/mem128</args>
+			<opc>0F 7A 5B /r</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>PHADDUWD--Packed Horizontal Add Unsigned Word to Doubleword.</brief>
+		<dscrp>Adds each adjacent pair of 16-bit unsigned integer values in an XMM register or 128-bit memory location and packs the 32-bit results in the destination XMM register.</dscrp>
+		<ins>
+			<mnem>PHADDUWD</mnem>
+			<args>xmm1,xmm2/mem128</args>
+			<opc>0F 7A 56 /r</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>PHADDUWQ--Packed Horizontal Add Unsigned Word to Quadword.</brief>
+		<dscrp>Adds four successive 16-bit unsigned integer values in an XMM register or 128-bit memory location and packs the 64-bit results in the destination XMM register.</dscrp>
+		<ins>
+			<mnem>PHADDUWQ</mnem>
+			<args>xmm1,xmm2/mem128</args>
+			<opc>0F 7A 57 /r</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>PHADDWD--Packed Horizontal Add Signed Word to Signed Doubleword.</brief>
+		<dscrp>Adds each adjacent pair of 16-bit signed integer values in an XMM register or 128-bit memory location and packs the 32-bit results in the destination XMM register.</dscrp>
+		<ins>
+			<mnem>PHADDWD</mnem>
+			<args>xmm1,xmm2/mem128</args>
+			<opc>0F 7A 46 /r</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>PHADDWQ--Packed Horizontal Add Signed Word to Signed Quadword.</brief>
+		<dscrp>Adds four successive 16-bit signed integer values in an XMM register or 128-bit memory location and packs the 64-bit results in the destination XMM register.</dscrp>
+		<ins>
+			<mnem>PHADDWQ</mnem>
+			<args>xmm1,xmm2/mem128</args>
+			<opc>0F 7A 47 /r</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>PHSUBBW--Packed Horizontal Subtract Signed Byte to Signed Word.</brief>
+		<dscrp>Subtracts the most significant byte from the least significant byte of each word in an XMM register or 128-bit memory location and packs the 16-bit results in the destination XMM register.</dscrp>
+		<ins>
+			<mnem>PHSUBBW</mnem>
+			<args>xmm1,xmm2/mem128</args>
+			<opc>0F 7A 61 /r</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>PHSUBDQ--Packed Horizontal Subtract Signed Doubleword to Signed Quadword.</brief>
+		<dscrp>Subtracts the most significant doubleword from the least significant doubleword of each quadword in an XMM register or 128-bit memory location and packs the 64-bit results in the destination XMM register.</dscrp>
+		<ins>
+			<mnem>PHSUBDQ</mnem>
+			<args>xmm1,xmm2/mem128</args>
+			<opc>0F 7A 63 /r</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>PHSUBWD--Packed Horizontal Subtract Signed Word to Signed Doubleword.</brief>
+		<dscrp>Subtracts the most significant word from the least significant word of each adjacent pair of 16-bit signed integer values in an XMM register or 128bit memory location and packs the 32-bit results in the destination XMM register.</dscrp>
+		<ins>
+			<mnem>PHSUBWD</mnem>
+			<args>xmm1,xmm2/mem128</args>
+			<opc>0F 7A 62 /r</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>PMACSDD--Packed Multiply Accumulate Signed Doubleword to Signed Doubleword.</brief>
+		<dscrp>Multiplies each packed 32-bit signed integer values in the second and third operands, then adds the 64-bit product to the corresponding packed 32-bit signed integer value in the fourth operand and writes the signed 32-bit result in the corresponding doubleword of the destination (xmm1 register).</dscrp>
+		<ins>
+			<mnem>PMACSDD</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,xmm1</args>
+			<opc>0F 24 9E /r /drex0</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>PMACSDQH--Packed Multiply Accumulate Signed High Doubleword to Signed Quadword.</brief>
+		<dscrp>Multiplies the high doublewords in the second and third operand, then adds the signed 64-bit products to the signed 64-bit values in the fourth operand and writes the quadword results in the destination (xmm1 register).</dscrp>
+		<ins>
+			<mnem>PMACSDQH</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,xmm1</args>
+			<opc>0F 24 9F /r /drex0</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>PMACSDQL--Packed Multiply Accumulate Signed Low Doubleword to Signed Quadword.</brief>
+		<dscrp>Multiplies the low doublewords in the second and third operands, then adds the signed 64-bit products to the signed 64-bit values in the fourth operand and writes the signed quadword results in the destination (xmm1 register).</dscrp>
+		<ins>
+			<mnem>PMACSDQL</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,xmm1</args>
+			<opc>0F 24 97 /r /drex0</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>PMACSSDD--Packed Multiply Accumulate Signed Doubleword to Signed Doubleword with Saturation.</brief>
+		<dscrp>Multiplies each packed 32-bit signed integer values in the second and third operands, then adds each 64-bit product to the corresponding packed 32-bit signed integer value in the fourth operand and writes the signed saturated 32-bit result in the corresponding doubleword of the destination (xmm1 register).</dscrp>
+		<ins>
+			<mnem>PMACSSDD</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,xmm1</args>
+			<opc>0F 24 8E /r /drex0</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>PMACSSDQH--Packed Multiply Accumulate Signed High Doubleword to Signed Quadword with Saturation.</brief>
+		<dscrp>Multiplies the high doublewords in the second and third operands, then adds the signed products to the signed 64-bit integer values in the fourth operand.</dscrp>
+		<ins>
+			<mnem>PMACSSDQH</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,xmm1</args>
+			<opc>0F 24 8F /r /drex0</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>PMACSSDQL--Packed Multiply Accumulate Signed Low Doubleword to Signed Quadword with Saturation.</brief>
+		<dscrp>Multiplies the low doublewords in the second and third operands, then adds the 64-bit products to the signed 64-bit integer values in the fourth operand and writes the signed saturated quadword result in the destination (xmm1 register).</dscrp>
+		<ins>
+			<mnem>PMACSSDQL</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,xmm1</args>
+			<opc>0F 24 87 /r /drex0</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>PMACSSWD--Packed Multiply Accumulate Signed Word to Signed Doubleword with Saturation.</brief>
+		<dscrp>Multiplies each odd-numbered packed 16-bit signed integer values in the second and third operands, then adds the 32-bit products to the corresponding packed 32-bit signed integer values in the fourth operand and writes the signed saturated 32-bit results in the destination (xmm1 register).</dscrp>
+		<ins>
+			<mnem>PMACSSWD</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,xmm1</args>
+			<opc>0F 24 86 /r /drex0</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>PMACSSWW--Packed Multiply Accumulate Signed Word to Signed Word with Saturation.</brief>
+		<dscrp>Multiplies packed 16-bit signed integer values in the second and third operands, then adds the 32-bit products to the corresponding packed 16-bit signed integer value in the fourth operand and writes the signed saturated 16-bit results in the destination (xmm1 register).</dscrp>
+		<ins>
+			<mnem>PMACSSWW</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,xmm1</args>
+			<opc>0F 24 85 /r /drex0</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>PMACSWD--Packed Multiply Accumulate Signed Word to Signed Doubleword.</brief>
+		<dscrp>Multiplies each odd-numbered packed 16-bit signed integer values in second and third operands, then adds each 32bit product to the corresponding packed 32-bit signed integer value in the fourth operand and writes the signed 32-bit result in the destination (xmm1 register).</dscrp>
+		<ins>
+			<mnem>PMACSWD</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,xmm1</args>
+			<opc>0F 24 96 /r /drex0</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>PMACSWW--Packed Multiply Accumulate Signed Word to Signed Word.</brief>
+		<dscrp>Multiplies packed 16-bit signed integer values in the second and third operands, adds each 32-bit product to the corresponding packed 16-bit signed integer value in the fourth operand and writes the signed 16-bit results in the destination (xmm1 register).</dscrp>
+		<ins>
+			<mnem>PMACSWW</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,xmm1</args>
+			<opc>0F 24 95 /r /drex0</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>PMADCSSWD--Packed Multiply, Add and Accumulate Signed Word to Signed Doubleword with Saturation.</brief>
+		<dscrp>Multiplies packed signed 16bit integer values in the second and third operands, then adds the 32-bit products of the even-odd adjacent words together. Finally, adds their sum to the corresponding packed 32-bit signed integer value in the fourth operand and writes the signed saturated 32-bit results in the destination (xmm1 register).</dscrp>
+		<ins>
+			<mnem>PMADCSSWD</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,xmm1</args>
+			<opc>0F 24 A6 /r /drex0</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>PMADCSWD--Packed Multiply Add and Accumulate Signed Word to Signed Doubleword.</brief>
+		<dscrp>Multiplies packed signed 16bit integer values in the second and third operands, then adds the 32-bit products of the even-odd adjacent words together. Finally, adds their sum to the corresponding packed 32-bit signed integer value in the fourth operand and writes the signed 32-bit results in the destination (xmm1register).</dscrp>
+		<ins>
+			<mnem>PMADCSWD</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,xmm1</args>
+			<opc>0F 24 B6 /r /drex0</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>PPERM--Packed Permute Bytes.</brief>
+		<dscrp>For each byte position of the 16byte result, uses corresponding control byte in fourth operand to perform logical operation on one of 32 bytes from the second and third source operands and writes result in destination (xmm1 register).</dscrp>
+		<ins>
+			<mnem>PPERM</mnem>
+			<args>xmm1,xmm1,xmm2,xmm3/mem128</args>
+			<opc>0F 24 23 /r /drex0</opc>
+		</ins>
+		<ins>
+			<mnem>PPERM</mnem>
+			<args>xmm1,xmm1,xmm3/mem128,xmm2</args>
+			<opc>0F 24 23 /r /drex1</opc>
+		</ins>
+		<ins>
+			<mnem>PPERM</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,xmm1</args>
+			<opc>0F 24 27 /r /drex0</opc>
+		</ins>
+		<ins>
+			<mnem>PPERM</mnem>
+			<args>xmm1,xmm3/mem128,xmm2,xmm1</args>
+			<opc>0F 24 27 /r /drex1</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>PROTB--Packed Rotate Bytes.</brief>
+		<dscrp>Rotates each byte of the source operand (2nd operand) by the amount specified in the signed value of the corresponding count byte (3rd operand) and writes the result in the corresponding byte of the destination.</dscrp>
+		<ins>
+			<mnem>PROTB</mnem>
+			<args>xmm1,xmm2,xmm3/mem128</args>
+			<opc>0F 24 40 /r /drex0</opc>
+		</ins>
+		<ins>
+			<mnem>PROTB</mnem>
+			<args>xmm1,xmm3/mem128,xmm2</args>
+			<opc>0F 24 40 /r /drex1</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>PROTD--Packed Rotate Doublewords.</brief>
+		<dscrp>Rotates each doubleword of the source operand (2nd operand) by the amount specified in the low-order byte of the corresponding count doubleword (3rd operand) and writes the result in the corresponding doubleword of the destination.</dscrp>
+		<ins>
+			<mnem>PROTD</mnem>
+			<args>xmm1,xmm2,xmm3/mem128</args>
+			<opc>0F 24 42 /r /drex0</opc>
+		</ins>
+		<ins>
+			<mnem>PROTD</mnem>
+			<args>xmm1,xmm3/mem128,xmm2</args>
+			<opc>0F 24 42 /r /drex1</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>PROTQ--Packed Rotate Quadwords.</brief>
+		<dscrp>Rotates each quadword of the source operand (2nd operand) by the amount specified in the low-order byte of the corresponding quadword in the third operand and writes the result in the corresponding quadword of the destination.</dscrp>
+		<ins>
+			<mnem>PROTQ</mnem>
+			<args>xmm1,xmm2,xmm3/mem128</args>
+			<opc>0F 24 43 /r /drex0</opc>
+		</ins>
+		<ins>
+			<mnem>PROTQ</mnem>
+			<args>xmm1,xmm3/mem128,xmm2</args>
+			<opc>0F 24 43 /r /drex1</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>PROTW--Packed Rotate Words.</brief>
+		<dscrp>Rotates each word of the source operand (2nd operand) by the amount specified in the low-order byte of the corresponding word in the third operand and writes the result in the corresponding word of the destination.</dscrp>
+		<ins>
+			<mnem>PROTW</mnem>
+			<args>xmm1,xmm2,xmm3/mem128</args>
+			<opc>0F 24 41 /r /drex0</opc>
+		</ins>
+		<ins>
+			<mnem>PROTW</mnem>
+			<args>xmm1,xmm3/mem128,xmm2</args>
+			<opc>0F 24 41 /r /drex1</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>PSHAB--Packed Shift Arithmetic Bytes.</brief>
+		<dscrp>Shifts each byte of second operand by an amount specified in the corresponding byte in the third operand and writes the result in the corresponding byte of the destination (xmm1 register).</dscrp>
+		<ins>
+			<mnem>PSHAB</mnem>
+			<args>xmm1,xmm2,xmm3/mem128</args>
+			<opc>0F 24 48 /r /drex0</opc>
+		</ins>
+		<ins>
+			<mnem>PSHAB</mnem>
+			<args>xmm1,xmm3/mem128,xmm2</args>
+			<opc>0F 24 48 /r /drex1</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>PSHAD--Packed Shift Arithmetic Doublewords.</brief>
+		<dscrp>Shifts each doubleword of second operand by an amount specified in the low-order byte of the corresponding doubleword of third operand and writes the result in the corresponding doubleword of the destination (xmm1 register).</dscrp>
+		<ins>
+			<mnem>PSHAD</mnem>
+			<args>xmm1,xmm2,xmm3/mem128</args>
+			<opc>0F 24 4A /r /drex0</opc>
+		</ins>
+		<ins>
+			<mnem>PSHAD</mnem>
+			<args>xmm1,xmm3/mem128,xmm2</args>
+			<opc>0F 24 4A /r /drex1</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>PSHAQ--Packed Shift Arithmetic Quadwords.</brief>
+		<dscrp>Shifts each quadword of second operand by an amount specified in the low-order byte of the corresponding quadword in the third operand and writes the result in the corresponding quadword of the destination (xmm1 register).</dscrp>
+		<ins>
+			<mnem>PSHAQ</mnem>
+			<args>xmm1,xmm2,xmm3/mem128</args>
+			<opc>0F 24 4B /r /drex0</opc>
+		</ins>
+		<ins>
+			<mnem>PSHAQ</mnem>
+			<args>xmm1,xmm3/mem128,xmm2</args>
+			<opc>0F 24 4B /r /drex1</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>PSHAW--Packed Shift Arithmetic Words.</brief>
+		<dscrp>Shifts each word of second operand by an amount specified in the low-order byte of the corresponding word in the third operand and writes the result in the corresponding word of the destination (xmm1 register).</dscrp>
+		<ins>
+			<mnem>PSHAW</mnem>
+			<args>xmm1,xmm2,xmm3/mem128</args>
+			<opc>0F 24 49 /r /drex0</opc>
+		</ins>
+		<ins>
+			<mnem>PSHAW</mnem>
+			<args>xmm1,xmm3/mem128,xmm2</args>
+			<opc>0F 24 49 /r /drex1</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>PSHLB--Packed Shift Logical Bytes.</brief>
+		<dscrp>Shifts each byte of the second operand by an amount specified in the corresponding byte in the third operand and writes the result in the corresponding byte of the destination (xmm1 register).</dscrp>
+		<ins>
+			<mnem>PSHLB</mnem>
+			<args>xmm1,xmm2,xmm3/mem128</args>
+			<opc>0F 24 44 /r /drex0</opc>
+		</ins>
+		<ins>
+			<mnem>PSHLB</mnem>
+			<args>xmm1,xmm3/mem128,xmm2</args>
+			<opc>0F 24 44 /r /drex1</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>PSHLD--Packed Shift Logical Doublewords.</brief>
+		<dscrp>Shifts each doubleword of second operand by an amount specified in the low-order byte of the corresponding doubleword in the third operand and writes the result in the corresponding doubleword of the destination (xmm1 register).</dscrp>
+		<ins>
+			<mnem>PSHLD</mnem>
+			<args>xmm1,xmm2,xmm3/mem128</args>
+			<opc>0F 24 46 /r /drex0</opc>
+		</ins>
+		<ins>
+			<mnem>PSHLD</mnem>
+			<args>xmm1,xmm3/mem128,xmm2</args>
+			<opc>0F 24 46 /r /drex1</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>PSHLQ--Packed Shift Logical Quadwords.</brief>
+		<dscrp>Shifts each quadword of second operand by an amount specified in the low-order byte of the corresponding quadword in the third operand and writes the result in the corresponding quadword of the destination (xmm1 register).</dscrp>
+		<ins>
+			<mnem>PSHLQ</mnem>
+			<args>xmm1,xmm2,xmm3/mem128</args>
+			<opc>0F 24 47 /r /drex0</opc>
+		</ins>
+		<ins>
+			<mnem>PSHLQ</mnem>
+			<args>xmm1,xmm3/mem128,xmm2</args>
+			<opc>0F 24 47 /r /drex1</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>PSHLW--Packed Shift Logical Words.</brief>
+		<dscrp>Shifts each word of the second operand by an amount specified in the low-order byte of the corresponding word in the third operand and writes the result in the corresponding word of the destination (xmm1 register).</dscrp>
+		<ins>
+			<mnem>PSHLW</mnem>
+			<args>xmm1,xmm2,xmm3/mem128</args>
+			<opc>0F 24 45 /r /drex0</opc>
+		</ins>
+		<ins>
+			<mnem>PSHLW</mnem>
+			<args>xmm1,xmm3/mem128,xmm2</args>
+			<opc>0F 24 45 /r /drex1</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>PTEST--Predicate Test Register.</brief>
+		<dscrp>Set ZF, if the result of a logical AND of all bits in xmm2/m128 with the corresponding bits in xmm1 is 0s. Set CF, if the result of the logical AND of the source with a logical NOT of the destination is 0s.</dscrp>
+		<ins>
+			<mnem>PTEST</mnem>
+			<args>xmm1,xmm2/mem128</args>
+			<opc>66 0F 38 17 /r</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>ROUNDPD--Round Packed Double-Precision Floating-Point.</brief>
+		<dscrp>Rounds two packed double-precision floating-point values in xmm2 or 128-bit memory location and writes the results in the destination (xmm1 register).</dscrp>
+		<ins>
+			<mnem>ROUNDPD</mnem>
+			<args>xmm1,xmm2/mem128,imm8</args>
+			<opc>66 0F 3A 09 /r ib</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>ROUNDPS--Round Packed Single-Precision Floating-Point.</brief>
+		<dscrp>Rounds four packed single-precision floating-point values in xmm2 or 128-bit memory location and writes the results in the destination (xmm1 register).</dscrp>
+		<ins>
+			<mnem>ROUNDPS</mnem>
+			<args>xmm1,xmm2/mem128,imm8</args>
+			<opc>66 0F 3A 08 /r ib</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>ROUNDSD--Round Scalar Double-Precision Floating-Point.</brief>
+		<dscrp>Rounds the scalar double-precision floating-point value in the lowest position in xmm2 or 64-bit memory location and writes the results in the lowest position in the destination (xmm1 register).</dscrp>
+		<ins>
+			<mnem>ROUNDSD</mnem>
+			<args>xmm1,xmm2/mem64,imm8</args>
+			<opc>66 0F 3A 0B /r ib</opc>
+		</ins>
+	</common>
+</instrs>

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
+<!-- AZ Rules -->
 <!--
 https://github.com/MahdiSafsafi/Parsable-Instructions
 -->
@@ -7,7 +8,7 @@ https://github.com/MahdiSafsafi/Parsable-Instructions
      If XML validation failed ,you probably have a corrupted data ! 
 -->
 
-<!ELEMENT x86ins (common+)>
+<!ELEMENT instrs (common+)>
 
 <!ELEMENT common (brief,ins+,oprndenc*)>
 
@@ -30,9 +31,8 @@ https://github.com/MahdiSafsafi/Parsable-Instructions
 <!ELEMENT oprnd4 (#PCDATA)>
 
 <!-- version attribute must be specified !-->
-<!ATTLIST x86ins version CDATA #REQUIRED>
+<!ATTLIST instrs version CDATA #REQUIRED>
 <!ATTLIST ins x32m CDATA "V"> <!-- x32m default to Valid if not specified.-->
 <!ATTLIST ins x64m CDATA "V"> <!-- x64m default to Valid if not specified.-->
 <!ATTLIST opc openc CDATA "">
 <!ATTLIST oprndenc openc CDATA #REQUIRED>
-

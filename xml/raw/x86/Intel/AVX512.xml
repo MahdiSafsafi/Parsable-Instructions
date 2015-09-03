@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<!DOCTYPE x86ins SYSTEM "ins_rules.dtd">
-<!--
-https://github.com/MahdiSafsafi/Parsable-Instructions
--->
+<!DOCTYPE instrs SYSTEM "AVX512_Rules.dtd">
 <!-- Copyright (c) 2015 Mahdi Safsafi
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -24,6 +21,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
  -->
+<!--   https://github.com/MahdiSafsafi/Parsable-Instructions   -->
 <!-- 
   This XML file includes all instructions found in :
   Intel Architecture Instruction Set Extensions Programming Reference 319433-022 document.
@@ -45,7 +43,7 @@ THE SOFTWARE.
 
 ****FOR THE REST OF KEYS YOU SHOULD REFER TO INTEL DOCUMENTATIONS!****
  -->
-<x86ins version="1.00">
+<instrs version="1.00">
 	<common>
 		<brief>ADDPD--Add Packed Double-Precision Floating-Point Values.</brief>
 		<ins x32m="V" x64m="V">
@@ -25901,4 +25899,4 @@ THE SOFTWARE.
 			<oprnd4>NA</oprnd4>
 		</oprndenc>
 	</common>
-</x86ins>
+</instrs>

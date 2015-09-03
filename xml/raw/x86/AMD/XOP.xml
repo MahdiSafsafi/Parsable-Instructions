@@ -1,0 +1,990 @@
+<?xml version="1.0" encoding="ASCII"?>
+<!DOCTYPE instrs SYSTEM "XOP_Rules.dtd">
+<!-- Copyright (c) 2015 Mahdi Safsafi
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+ -->
+<!--   https://github.com/MahdiSafsafi/Parsable-Instructions   -->
+<!-- 
+  This XML file includes all instructions found in :
+  AMD64 Architecture Programmers Manual Volume 6: 128-Bit and 256-Bit XOP and FMA4 Instructions Pub No 43479 Rev 3.04 Date November 2009 document.
+ -->
+<instrs version="1.00">
+	<common>
+		<brief>VFMADDPD--Multiply and Add Packed Double-Precision Floating-Point.</brief>
+		<ins>
+			<mnem>VFMADDPD</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,xmm4</args>
+			<opc>VEX3.mmmmm3.W0.xsrc1.L0.66 69 /r /is4</opc>
+		</ins>
+		<ins>
+			<mnem>VFMADDPD</mnem>
+			<args>ymm1,ymm2,ymm3/mem256,ymm4</args>
+			<opc>VEX3.mmmmm3.W0.ysrc1.L1.66 69 /r /is4</opc>
+		</ins>
+		<ins>
+			<mnem>VFMADDPD</mnem>
+			<args>xmm1,xmm2,xmm3,xmm4/mem128</args>
+			<opc>VEX3.mmmmm3.W1.xsrc1.L0.66 69 /r /is4</opc>
+		</ins>
+		<ins>
+			<mnem>VFMADDPD</mnem>
+			<args>ymm1,ymm2,ymm3,ymm4/mem256</args>
+			<opc>VEX3.mmmmm3.W1.ysrc1.L1.66 69 /r /is4</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VFMADDPS--Multiply and Add Packed Single-Precision Floating-Point.</brief>
+		<ins>
+			<mnem>VFMADDPS</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,xmm4</args>
+			<opc>VEX3.mmmmm3.W0.xsrc1.L0.66 68 /r /is4</opc>
+		</ins>
+		<ins>
+			<mnem>VFMADDPS</mnem>
+			<args>ymm1,ymm2,ymm3/mem256,ymm4</args>
+			<opc>VEX3.mmmmm3.W0.ysrc1.L1.66 68 /r /is4</opc>
+		</ins>
+		<ins>
+			<mnem>VFMADDPS</mnem>
+			<args>xmm1,xmm2,xmm3,xmm4/mem128</args>
+			<opc>VEX3.mmmmm3.W1.xsrc1.L0.66 68 /r /is4</opc>
+		</ins>
+		<ins>
+			<mnem>VFMADDPS</mnem>
+			<args>ymm1,ymm2,ymm3,ymm4/mem256</args>
+			<opc>VEX3.mmmmm3.W1.ysrc1.L1.66 68 /r /is4</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VFMADDSD--Multiply and Add Scalar Double-Precision Floating-Point.</brief>
+		<ins>
+			<mnem>VFMADDSD</mnem>
+			<args>xmm1,xmm2,xmm3/mem64,xmm4</args>
+			<opc>VEX3.mmmmm3.W0.xsrc1.L0.66 6B /r /is4</opc>
+		</ins>
+		<ins>
+			<mnem>VFMADDSD</mnem>
+			<args>xmm1,xmm2,xmm3,xmm4/mem64</args>
+			<opc>VEX3.mmmmm3.W1.xsrc1.L0.66 6B /r /is4</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VFMADDSS--Multiply and Add Scalar Single-Precision Floating-Point.</brief>
+		<ins>
+			<mnem>VFMADDSS</mnem>
+			<args>xmm1,xmm2,xmm3/mem32,xmm4</args>
+			<opc>VEX3.mmmmm3.W0.xsrc1.L0.66 6A /r /is4</opc>
+		</ins>
+		<ins>
+			<mnem>VFMADDSS</mnem>
+			<args>xmm1,xmm2,xmm3,xmm4/mem32</args>
+			<opc>VEX3.mmmmm3.W1.xsrc1.L0.66 6A /r /is4</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VFMADDSUBPD--Multiply with Alternating Add/Subtract of Packed Double-Precision Floating-Point.</brief>
+		<ins>
+			<mnem>VFMADDSUBPD</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,xmm4</args>
+			<opc>VEX3.mmmmm3.W0.xsrc1.L0.66 5D /r /is4</opc>
+		</ins>
+		<ins>
+			<mnem>VFMADDSUBPD</mnem>
+			<args>ymm1,ymm2,ymm3/mem256,ymm4</args>
+			<opc>VEX3.mmmmm3.W0.ysrc1.L1.66 5D /r /is4</opc>
+		</ins>
+		<ins>
+			<mnem>VFMADDSUBPD</mnem>
+			<args>xmm1,xmm2,xmm3,xmm4/mem128</args>
+			<opc>VEX3.mmmmm3.W1.xsrc1.L0.66 5D /r /is4</opc>
+		</ins>
+		<ins>
+			<mnem>VFMADDSUBPD</mnem>
+			<args>ymm1,ymm2,ymm3,ymm4/mem256</args>
+			<opc>VEX3.mmmmm3.W1.ysrc1.L1.66 5D /r /is4</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VFMADDSUBPS--Multiply with Alternating Add/Subtract of Packed Single-Precision Floating-Point.</brief>
+		<ins>
+			<mnem>VFMADDSUBPS</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,xmm4</args>
+			<opc>VEX3.mmmmm3.W0.xsrc1.L0.66 5C /r /is4</opc>
+		</ins>
+		<ins>
+			<mnem>VFMADDSUBPS</mnem>
+			<args>ymm1,ymm2,ymm3/mem256,ymm4</args>
+			<opc>VEX3.mmmmm3.W0.ysrc1.L1.66 5C /r /is4</opc>
+		</ins>
+		<ins>
+			<mnem>VFMADDSUBPS</mnem>
+			<args>xmm1,xmm2,xmm3,xmm4/mem128</args>
+			<opc>VEX3.mmmmm3.W1.xsrc1.L0.66 5C /r /is4</opc>
+		</ins>
+		<ins>
+			<mnem>VFMADDSUBPS</mnem>
+			<args>ymm1,ymm2,ymm3,ymm4/mem256</args>
+			<opc>VEX3.mmmmm3.W1.ysrc1.L1.66 5C /r /is4</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VFMSUBADDPD--Multiply with Alternating Subtract/Add of Packed Double-Precision Floating-Point.</brief>
+		<ins>
+			<mnem>VFMSUBADDPD</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,xmm4</args>
+			<opc>VEX3.mmmmm3.W0.xsrc1.L0.66 5F /r /is4</opc>
+		</ins>
+		<ins>
+			<mnem>VFMSUBADDPD</mnem>
+			<args>ymm1,ymm2,ymm3/mem256,ymm4</args>
+			<opc>VEX3.mmmmm3.W0.ysrc1.L1.66 5F /r /is4</opc>
+		</ins>
+		<ins>
+			<mnem>VFMSUBADDPD</mnem>
+			<args>xmm1,xmm2,xmm3,xmm4/mem128</args>
+			<opc>VEX3.mmmmm3.W1.xsrc1.L0.66 5F /r /is4</opc>
+		</ins>
+		<ins>
+			<mnem>VFMSUBADDPD</mnem>
+			<args>ymm1,ymm2,ymm3,ymm4/mem256</args>
+			<opc>VEX3.mmmmm3.W1.ysrc1.L1.66 5F /r /is4</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VFMSUBADDPS--Multiply with Alternating Subtract/Add of Packed Single-Precision Floating-Point.</brief>
+		<ins>
+			<mnem>VFMSUBADDPS</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,xmm4</args>
+			<opc>VEX3.mmmmm3.W0.xsrc1.L0.66 5E /r /is4</opc>
+		</ins>
+		<ins>
+			<mnem>VFMSUBADDPS</mnem>
+			<args>ymm1,ymm2,ymm3/mem256,ymm4</args>
+			<opc>VEX3.mmmmm3.W0.ysrc1.L1.66 5E /r /is4</opc>
+		</ins>
+		<ins>
+			<mnem>VFMSUBADDPS</mnem>
+			<args>xmm1,xmm2,xmm3,xmm4/mem128</args>
+			<opc>VEX3.mmmmm3.W1.xsrc1.L0.66 5E /r /is4</opc>
+		</ins>
+		<ins>
+			<mnem>VFMSUBADDPS</mnem>
+			<args>ymm1,ymm2,ymm3,ymm4/mem256</args>
+			<opc>VEX3.mmmmm3.W1.ysrc1.L1.66 5E /r /is4</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VFMSUBPD--Multiply and Subtract Packed Double-Precision Floating-Point.</brief>
+		<ins>
+			<mnem>VFMSUBPD</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,xmm4</args>
+			<opc>VEX3.mmmmm3.W0.xsrc1.L0.66 6D /r /is4</opc>
+		</ins>
+		<ins>
+			<mnem>VFMSUBPD</mnem>
+			<args>ymm1,ymm2,ymm3/mem256,ymm4</args>
+			<opc>VEX3.mmmmm3.W0.ysrc1.L1.66 6D /r /is4</opc>
+		</ins>
+		<ins>
+			<mnem>VFMSUBPD</mnem>
+			<args>xmm1,xmm2,xmm3,xmm4/mem128</args>
+			<opc>VEX3.mmmmm3.W1.xsrc1.L0.66 6D /r /is4</opc>
+		</ins>
+		<ins>
+			<mnem>VFMSUBPD</mnem>
+			<args>ymm1,ymm2,ymm3,ymm4/mem256</args>
+			<opc>VEX3.mmmmm3.W1.ysrc1.L1.66 6D /r /is4</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VFMSUBPS--Multiply and Subtract Packed Single-Precision Floating-Point.</brief>
+		<ins>
+			<mnem>VFMSUBPS</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,xmm4</args>
+			<opc>VEX3.mmmmm3.W0.xsrc1.L0.66 6C /r /is4</opc>
+		</ins>
+		<ins>
+			<mnem>VFMSUBPS</mnem>
+			<args>ymm1,ymm2,ymm3/mem256,ymm4</args>
+			<opc>VEX3.mmmmm3.W0.ysrc1.L1.66 6C /r /is4</opc>
+		</ins>
+		<ins>
+			<mnem>VFMSUBPS</mnem>
+			<args>xmm1,xmm2,xmm3,xmm4/mem128</args>
+			<opc>VEX3.mmmmm3.W1.xsrc1.L0.66 6C /r /is4</opc>
+		</ins>
+		<ins>
+			<mnem>VFMSUBPS</mnem>
+			<args>ymm1,ymm2,ymm3,ymm4/mem256</args>
+			<opc>VEX3.mmmmm3.W1.ysrc1.L1.66 6C /r /is4</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VFMSUBSD--Multiply and Subtract Scalar Double-Precision Floating-Point.</brief>
+		<ins>
+			<mnem>VFMSUBSD</mnem>
+			<args>xmm1,xmm2,xmm3/mem64,xmm4</args>
+			<opc>VEX3.mmmmm3.W0.xsrc1.L0.66 6F /r /is4</opc>
+		</ins>
+		<ins>
+			<mnem>VFMSUBSD</mnem>
+			<args>xmm1,xmm2,xmm3,xmm4/mem64</args>
+			<opc>VEX3.mmmmm3.W1.xsrc1.L0.66 6F /r /is4</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VFMSUBSS--Multiply and Subtract Scalar Single-Precision Floating-Point.</brief>
+		<ins>
+			<mnem>VFMSUBSS</mnem>
+			<args>xmm1,xmm2,xmm3/mem32,xmm4</args>
+			<opc>VEX3.mmmmm3.W0.xsrc1.L0.66 6E /r /is4</opc>
+		</ins>
+		<ins>
+			<mnem>VFMSUBSS</mnem>
+			<args>xmm1,xmm2,xmm3,xmm4/mem32</args>
+			<opc>VEX3.mmmmm3.W1.xsrc1.L0.66 6E /r /is4</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VFNMADDPD--Negative Multiply and Add Packed Double-Precision Floating-Point.</brief>
+		<ins>
+			<mnem>VFNMADDPD</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,xmm4</args>
+			<opc>VEX3.mmmmm3.W0.xsrc1.L0.66 79 /r /is4</opc>
+		</ins>
+		<ins>
+			<mnem>VFNMADDPD</mnem>
+			<args>ymm1,ymm2,ymm3/mem256,ymm4</args>
+			<opc>VEX3.mmmmm3.W0.ysrc1.L1.66 79 /r /is4</opc>
+		</ins>
+		<ins>
+			<mnem>VFNMADDPD</mnem>
+			<args>xmm1,xmm2,xmm3,xmm4/mem128</args>
+			<opc>VEX3.mmmmm3.W1.xsrc1.L0.66 79 /r /is4</opc>
+		</ins>
+		<ins>
+			<mnem>VFNMADDPD</mnem>
+			<args>ymm1,ymm2,ymm3,ymm4/mem256</args>
+			<opc>VEX3.mmmmm3.W1.ysrc1.L1.66 79 /r /is4</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VFNMADDPS--Negative Multiply and Add Packed Single-Precision Floating-Point.</brief>
+		<ins>
+			<mnem>VFNMADDPS</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,xmm4</args>
+			<opc>VEX3.mmmmm3.W0.xsrc1.L0.66 78 /r /is4</opc>
+		</ins>
+		<ins>
+			<mnem>VFNMADDPS</mnem>
+			<args>ymm1,ymm2,ymm3/mem256,ymm4</args>
+			<opc>VEX3.mmmmm3.W0.ysrc1.L1.66 78 /r /is4</opc>
+		</ins>
+		<ins>
+			<mnem>VFNMADDPS</mnem>
+			<args>xmm1,xmm2,xmm3,xmm4/mem128</args>
+			<opc>VEX3.mmmmm3.W1.xsrc1.L0.66 78 /r /is4</opc>
+		</ins>
+		<ins>
+			<mnem>VFNMADDPS</mnem>
+			<args>ymm1,ymm2,ymm3,ymm4/mem256</args>
+			<opc>VEX3.mmmmm3.W1.ysrc1.L1.66 78 /r /is4</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VFNMADDSD--Negative Multiply and Add Scalar Double-Precision Floating-Point.</brief>
+		<ins>
+			<mnem>VFNMADDSD</mnem>
+			<args>xmm1,xmm2,xmm3/mem64,xmm4</args>
+			<opc>VEX3.mmmmm3.W0.xsrc1.L0.66 7B /r /is4</opc>
+		</ins>
+		<ins>
+			<mnem>VFNMADDSD</mnem>
+			<args>xmm1,xmm2,xmm3,xmm4/mem64</args>
+			<opc>VEX3.mmmmm3.W1.xsrc1.L0.66 7B /r /is4</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VFNMADDSS--Negative Multiply and Add Scalar Single-Precision Floating-Point.</brief>
+		<ins>
+			<mnem>VFNMADDSS</mnem>
+			<args>xmm1,xmm2,xmm3/mem32,xmm4</args>
+			<opc>VEX3.mmmmm3.W0.xsrc1.L0.66 7A /r /is4</opc>
+		</ins>
+		<ins>
+			<mnem>VFNMADDSS</mnem>
+			<args>xmm1,xmm2,xmm3,xmm4/mem32</args>
+			<opc>VEX3.mmmmm3.W1.xsrc1.L0.66 7A /r /is4</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VFNMSUBPD--Negative Multiply and Subtract Packed Double-Precision Floating-Point.</brief>
+		<ins>
+			<mnem>VFNMSUBPD</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,xmm4</args>
+			<opc>VEX3.mmmmm3.W0.xsrc1.L0.66 7D /r /is4</opc>
+		</ins>
+		<ins>
+			<mnem>VFNMSUBPD</mnem>
+			<args>ymm1,ymm2,ymm3/mem256,ymm4</args>
+			<opc>VEX3.mmmmm3.W0.ysrc1.L1.66 7D /r /is4</opc>
+		</ins>
+		<ins>
+			<mnem>VFNMSUBPD</mnem>
+			<args>xmm1,xmm2,xmm3,xmm4/mem128</args>
+			<opc>VEX3.mmmmm3.W1.xsrc1.L0.66 7D /r /is4</opc>
+		</ins>
+		<ins>
+			<mnem>VFNMSUBPD</mnem>
+			<args>ymm1,ymm2,ymm3,ymm4/mem256</args>
+			<opc>VEX3.mmmmm3.W1.ysrc1.L1.66 7D /r /is4</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VFNMSUBPS--Negative Multiply and Subtract Packed Single-Precision Floating-Point.</brief>
+		<ins>
+			<mnem>VFNMSUBPS</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,xmm4</args>
+			<opc>VEX3.mmmmm3.W0.xsrc1.L0.66 7C /r /is4</opc>
+		</ins>
+		<ins>
+			<mnem>VFNMSUBPS</mnem>
+			<args>ymm1,ymm2,ymm3/mem256,ymm4</args>
+			<opc>VEX3.mmmmm3.W0.ysrc1.L1.66 7C /r /is4</opc>
+		</ins>
+		<ins>
+			<mnem>VFNMSUBPS</mnem>
+			<args>xmm1,xmm2,xmm3,xmm4/mem128</args>
+			<opc>VEX3.mmmmm3.W1.xsrc1.L0.66 7C /r /is4</opc>
+		</ins>
+		<ins>
+			<mnem>VFNMSUBPS</mnem>
+			<args>ymm1,ymm2,ymm3,ymm4/mem256</args>
+			<opc>VEX3.mmmmm3.W1.ysrc1.L1.66 7C /r /is4</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VFNMSUBSD--Negative Multiply and Subtract Scalar Double-Precision Floating-Point.</brief>
+		<ins>
+			<mnem>VFNMSUBSD</mnem>
+			<args>xmm1,xmm2,xmm3/mem64,xmm4</args>
+			<opc>VEX3.mmmmm3.W0.xsrc1.L0.66 7F /r /is4</opc>
+		</ins>
+		<ins>
+			<mnem>VFNMSUBSD</mnem>
+			<args>xmm1,xmm2,xmm3,xmm4/mem64</args>
+			<opc>VEX3.mmmmm3.W1.xsrc1.L0.66 7F /r /is4</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VFNMSUBSS--Negative Multiply and Subtract Scalar Single-Precision Floating-Point.</brief>
+		<ins>
+			<mnem>VFNMSUBSS</mnem>
+			<args>xmm1,xmm2,xmm3/mem32,xmm4</args>
+			<opc>VEX3.mmmmm3.W0.xsrc1.L0.66 7E /r /is4</opc>
+		</ins>
+		<ins>
+			<mnem>VFNMSUBSS</mnem>
+			<args>xmm1,xmm2,xmm3,xmm4/mem32</args>
+			<opc>VEX3.mmmmm3.W1.xsrc1.L0.66 7E /r /is4</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VFRCZPD--Extract Fraction Packed Double-Precision Floating-Point.</brief>
+		<ins>
+			<mnem>VFRCZPD</mnem>
+			<args>xmm1,xmm2/mem128</args>
+			<opc>XOP.mmmmm9.W0.1111.L0.NA 81 /r</opc>
+		</ins>
+		<ins>
+			<mnem>VFRCZPD</mnem>
+			<args>ymm1,ymm2/mem256</args>
+			<opc>XOP.mmmmm9.W0.1111.L1.NA 81 /r</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VFRCZPS--Extract Fraction Packed Single-Precision Floating-Point.</brief>
+		<ins>
+			<mnem>VFRCZPS</mnem>
+			<args>xmm1,xmm2/mem128</args>
+			<opc>XOP.mmmmm9.W0.1111.L0.NA 80 /r</opc>
+		</ins>
+		<ins>
+			<mnem>VFRCZPS</mnem>
+			<args>ymm1,ymm2/mem256</args>
+			<opc>XOP.mmmmm9.W0.1111.L1.NA 80 /r</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VFRCZSD--Extract Fraction Scalar Double-Precision Floating-Point.</brief>
+		<ins>
+			<mnem>VFRCZSD</mnem>
+			<args>xmm1,xmm2/mem64</args>
+			<opc>XOP.mmmmm9.W0.1111.L0.NA 83 /r</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VFRCZSS--Extract Fraction Scalar Single-Precision Floating Point.</brief>
+		<ins>
+			<mnem>VFRCZSS</mnem>
+			<args>xmm1,xmm2/mem32</args>
+			<opc>XOP.mmmmm9.W0.1111.L0.NA 82 /r</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VPCMOV--Vector Conditional Moves.</brief>
+		<ins>
+			<mnem>VPCMOV</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,xmm4</args>
+			<opc>XOP.mmmmm8.W0.xsrc1.L0.NA A2 /r imm[7:4]</opc>
+		</ins>
+		<ins>
+			<mnem>VPCMOV</mnem>
+			<args>ymm1,ymm2,ymm3/mem256,ymm4</args>
+			<opc>XOP.mmmmm8.W0.ysrc1.L1.NA A2 /r imm[7:4]</opc>
+		</ins>
+		<ins>
+			<mnem>VPCMOV</mnem>
+			<args>xmm1,xmm2,xmm3,xmm4/mem128</args>
+			<opc>XOP.mmmmm8.W1.xsrc1.L0.NA A2 /r imm[7:4]</opc>
+		</ins>
+		<ins>
+			<mnem>VPCMOV</mnem>
+			<args>ymm1,ymm2,ymm3,ymm4/mem256</args>
+			<opc>XOP.mmmmm8.W1.ysrc1.L1.NA A2 /r imm[7:4]</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VPCOMB--Compare Vector Signed Bytes.</brief>
+		<ins>
+			<mnem>VPCOMB</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,imm8</args>
+			<opc>XOP.mmmmm8.W0.xsrc1.L0.NA CC /r /imm8</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VPCOMD--Compare Vector Signed Doublewords.</brief>
+		<ins>
+			<mnem>VPCOMD</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,imm8</args>
+			<opc>XOP.mmmmm8.W0.xsrc1.L0.NA CE /r /imm8</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VPCOMQ--Compare Vector Signed Quadwords.</brief>
+		<ins>
+			<mnem>VPCOMQ</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,imm8</args>
+			<opc>XOP.mmmmm8.W0.xsrc1.L0.NA CF /r imm8</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VPCOMUB--Compare Vector Unsigned Bytes.</brief>
+		<ins>
+			<mnem>VPCOMUB</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,imm8</args>
+			<opc>XOP.mmmmm8.W0.xsrc1.L0.NA EC /r imm8</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VPCOMUD--Compare Vector Unsigned Doublewords.</brief>
+		<ins>
+			<mnem>VPCOMUD</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,imm8</args>
+			<opc>XOP.mmmmm8.W0.xsrc1.L0.NA EE /r imm8</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VPCOMUQ--Compare Vector Unsigned Quadwords.</brief>
+		<ins>
+			<mnem>VPCOMUQ</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,imm8</args>
+			<opc>XOP.mmmmm8.W0.xsrc1.L0.NA EF /r imm8</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VPCOMUW--Compare Vector Unsigned Words.</brief>
+		<ins>
+			<mnem>VPCOMUW</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,imm8</args>
+			<opc>XOP.mmmmm8.W0.xsrc1.L0.NA ED /r imm8</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VPCOMW--Compare Vector Signed Words.</brief>
+		<ins>
+			<mnem>VPCOMW</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,imm8</args>
+			<opc>XOP.mmmmm8.W0.xsrc1.L0.NA CD /r imm8</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VPERMIL2PD--Permute Two-Source Double-Precision Floating- Point Values.</brief>
+		<ins>
+			<mnem>VPERMIL2PD</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,xmm4,imm8</args>
+			<opc>VEX3.mmmmm3.W0.xsrc1.L0.NA 49 /r imm8</opc>
+		</ins>
+		<ins>
+			<mnem>VPERMIL2PD</mnem>
+			<args>xmm1,xmm2,xmm3,xmm4/mem128,imm8</args>
+			<opc>VEX3.mmmmm3.W1.xsrc1.L0.NA 49 /r imm8</opc>
+		</ins>
+		<ins>
+			<mnem>VPERMIL2PD</mnem>
+			<args>ymm1,ymm2,ymm3/mem256,ymm4,imm8</args>
+			<opc>VEX3.mmmmm3.W0.ysrc1.L1.NA 49 /r imm8</opc>
+		</ins>
+		<ins>
+			<mnem>VPERMIL2PD</mnem>
+			<args>ymm1,ymm2,ymm3,ymm4/mem256,imm8</args>
+			<opc>VEX3.mmmmm3.W1.ysrc1.L1.NA 49 /r imm8</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VPERMIL2PS--Permute Two-Source Single-Precision Floating-Point Values.</brief>
+		<ins>
+			<mnem>VPERMIL2PS</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,xmm4,imm8</args>
+			<opc>VEX3.mmmmm3.W0.xsrc1.L0.NA 48 /r imm8</opc>
+		</ins>
+		<ins>
+			<mnem>VPERMIL2PS</mnem>
+			<args>xmm1,xmm2,xmm3,xmm4/mem128,imm8</args>
+			<opc>VEX3.mmmmm3.W1.xsrc1.L0.NA 48 /r imm8</opc>
+		</ins>
+		<ins>
+			<mnem>VPERMIL2PS</mnem>
+			<args>ymm1,ymm2,ymm3/mem256,ymm4,imm8</args>
+			<opc>VEX3.mmmmm3.W0.ysrc1.L1.NA 48 /r imm8</opc>
+		</ins>
+		<ins>
+			<mnem>VPERMIL2PS</mnem>
+			<args>ymm1,ymm2,ymm3,ymm4/mem256,imm8</args>
+			<opc>VEX3.mmmmm3.W1.ysrc1.L1.NA 48 /r imm8</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VPHADDBD--Packed Horizontal Add Signed Byte to Signed Doubleword.</brief>
+		<ins>
+			<mnem>VPHADDBD</mnem>
+			<args>xmm1,xmm2/mem128</args>
+			<opc>XOP.mmmmm9.W0.1111.L0.NA C2 /r</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VPHADDBQ--Packed Horizontal Add Signed Byte to Signed Quadword.</brief>
+		<ins>
+			<mnem>VPHADDBQ</mnem>
+			<args>xmm1,xmm2/mem128</args>
+			<opc>XOP.mmmmm9.W0.1111.L0.NA C3 /r</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VPHADDBW--Packed Horizontal Add Signed Byte to Signed Word.</brief>
+		<ins>
+			<mnem>VPHADDBW</mnem>
+			<args>xmm1,xmm2/mem128</args>
+			<opc>XOP.mmmmm9.W0.1111.L0.NA C1 /r</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VPHADDDQ--Packed Horizontal Add Signed Doubleword to Signed Quadword.</brief>
+		<ins>
+			<mnem>VPHADDDQ</mnem>
+			<args>xmm1,xmm2/mem128</args>
+			<opc>XOP.mmmmm9.W0.1111.L0.NA CB /r</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VPHADDUBD--Packed Horizontal Add Unsigned Byte to Doubleword.</brief>
+		<ins>
+			<mnem>VPHADDUBD</mnem>
+			<args>xmm1,xmm2/mem128</args>
+			<opc>XOP.mmmmm9.W0.1111.L0.NA D2 /r</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VPHADDUBQ--Packed Horizontal Add Unsigned Byte to Quadword.</brief>
+		<ins>
+			<mnem>VPHADDUBQ</mnem>
+			<args>xmm1,xmm2/mem128</args>
+			<opc>XOP.mmmmm9.W0.1111.L0.NA D3 /r</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VPHADDUBW--Packed Horizontal Add Unsigned Byte to Word.</brief>
+		<ins>
+			<mnem>VPHADDUBWD</mnem>
+			<args>xmm1,xmm2/mem128</args>
+			<opc>XOP.mmmmm9.W0.1111.L0.NA D1 /r</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VPHADDUDQ--Packed Horizontal Add Unsigned Doubleword to Quadword.</brief>
+		<ins>
+			<mnem>VPHADDUDQ</mnem>
+			<args>xmm1,xmm2/mem128</args>
+			<opc>XOP.mmmmm9.W0.1111.L0.NA DB /r</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VPHADDUWDPacked--Horizontal Add Unsigned Word to Doubleword.</brief>
+		<ins>
+			<mnem>VPHADDUWD</mnem>
+			<args>xmm1,xmm2/mem128</args>
+			<opc>XOP.mmmmm9.W0.1111.L0.NA D6 /r</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VPHADDUWQ--Packed Horizontal Add Unsigned Word to Quadword.</brief>
+		<ins>
+			<mnem>VPHADDUWQ</mnem>
+			<args>xmm1,xmm2/mem128</args>
+			<opc>XOP.mmmmm9.W0.1111.L0.NA D7 /r</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VPHADDWD--Packed Horizontal Add Signed Word to Signed Doubleword.</brief>
+		<ins>
+			<mnem>VPHADDWD</mnem>
+			<args>xmm1,xmm2/mem128</args>
+			<opc>XOP.mmmmm9.W0.1111.L0.NA C6 /r</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VPHADDWQ--Packed Horizontal Add Signed Word to Signed Quadword.</brief>
+		<ins>
+			<mnem>VPHADDWQ</mnem>
+			<args>xmm1,xmm2/mem128</args>
+			<opc>XOP.mmmmm9.W0.1111.L0.NA C7 /r</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VPHSUBBW--Packed Horizontal Subtract Signed Byte to Signed Word.</brief>
+		<ins>
+			<mnem>VPHSUBBW</mnem>
+			<args>xmm1,xmm2/mem128</args>
+			<opc>XOP.mmmmm9.W0.1111.L0.NA E1 /r</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VPHSUBDQ--Packed Horizontal Subtract Signed Doubleword to Signed Quadword.</brief>
+		<ins>
+			<mnem>VPHSUBDQ</mnem>
+			<args>xmm1,xmm2/mem128</args>
+			<opc>XOP.mmmmm9.W0.1111.L0.NA E3 /r</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VPHSUBWD--Packed Horizontal Subtract Signed Word to Signed Doubleword.</brief>
+		<ins>
+			<mnem>VPHSUBWD</mnem>
+			<args>xmm1,xmm2/mem128</args>
+			<opc>XOP.mmmmm9.W0.1111.L0.NA E2 /r</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VPMACSDD--Packed Multiply Accumulate Signed Doubleword to Signed Doubleword.</brief>
+		<ins>
+			<mnem>VPMACSDD</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,xmm4</args>
+			<opc>XOP.mmmmm8.W0.xsrc1.L0.NA 9E /r /is4</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VPMACSDQH--Packed Multiply Accumulate Signed High Doubleword to Signed Quadword.</brief>
+		<ins>
+			<mnem>VPMACSDQH</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,xmm4</args>
+			<opc>XOP.mmmmm8.W0.xsrc1.L0.NA 9F /r /is4</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VPMACSDQL--Packed Multiply Accumulate Signed Low Doubleword to Signed Quadword.</brief>
+		<ins>
+			<mnem>VPMACSDQL</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,xmm4</args>
+			<opc>XOP.mmmmm8.W0.xsrc1.L0.NA 97 /r /is4</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VPMACSSDD--Packed Multiply Accumulate Signed Doubleword to Signed Doubleword with Saturation.</brief>
+		<ins>
+			<mnem>VPMACSSDD</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,xmm4</args>
+			<opc>XOP.mmmmm8.W0.xsrc1.L0.NA 8E /r /is4</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VPMACSSDQH--Packed Multiply Accumulate Signed High Doubleword to Signed Quadword with.</brief>
+		<ins>
+			<mnem>VPMACSSDQH</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,xmm4</args>
+			<opc>XOP.mmmmm8.W0.xsrc1.L0.NA 8F /r is4</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VPMACSSDQL--Packed Multiply Accumulate Signed Low Doubleword to Signed Quadword with.</brief>
+		<ins>
+			<mnem>PMACSSDQL</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,xmm4</args>
+			<opc>XOP.mmmmm8.W0.xsrc1.L0.NA 87 /r /is4</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VPMACSSWD--Packed Multiply Accumulate Signed Word to Signed Doubleword with Saturation.</brief>
+		<ins>
+			<mnem>VPMACSSWD</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,xmm4</args>
+			<opc>XOP.mmmmm8.W0.xsrc1.L0.NA 86 /r /is4</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VPMACSSWW--Packed Multiply Accumulate Signed Word to Signed Word with Saturation.</brief>
+		<ins>
+			<mnem>PMACSSWW</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,xmm4</args>
+			<opc>XOP.mmmmm8.W0.xsrc1.L0.NA 85 /r /is4</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VPMACSWD--Packed Multiply Accumulate Signed Word to Signed Doubleword.</brief>
+		<ins>
+			<mnem>VPMACSWD</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,xmm4</args>
+			<opc>XOP.mmmmm8.W0.xsrc1.L0.NA 96 /r /is4</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VPMACSWW--Packed Multiply Accumulate Signed Word to Signed Word.</brief>
+		<ins>
+			<mnem>VPMACSWW</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,xmm4</args>
+			<opc>XOP.mmmmm8.W0.xsrc1.L0.NA 95 /r /is4</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VPMADCSSWD--Packed Multiply, Add and Accumulate Signed Word to Signed Doubleword with Saturation.</brief>
+		<ins>
+			<mnem>VPMADCSSWD</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,xmm4</args>
+			<opc>XOP.mmmmm8.W0.xsrc1.L0.NA A6 /r /is4</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VPMADCSWD--Packed Multiply Add and Accumulate Signed Word to Signed Doubleword.</brief>
+		<ins>
+			<mnem>PMADCSWD</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,xmm4</args>
+			<opc>XOP.mmmmm8.W0.xsrc1.L0.NA B6 /r /is4</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VPPERM--Packed Permute Bytes.</brief>
+		<ins>
+			<mnem>VPPERM</mnem>
+			<args>xmm1,xmm2,xmm3,xmm4/mem128</args>
+			<opc>XOP.mmmmm8.W1.xsrc1.L0.NA A3 /r is4</opc>
+		</ins>
+		<ins>
+			<mnem>VPPERM</mnem>
+			<args>xmm1,xmm2,xmm3/mem128,xmm4</args>
+			<opc>XOP.mmmmm8.W0.xsrc1.L0.NA A3 /r is4</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VPROTB--Packed Rotate Bytes.</brief>
+		<ins>
+			<mnem>VPROTB</mnem>
+			<args>xmm1,xmm2/mem128,xmm8</args>
+			<opc>XOP.mmmmm9.W0.xcnt.L0.NA 90 /r</opc>
+		</ins>
+		<ins>
+			<mnem>VPROTB</mnem>
+			<args>xmm1,xmm2,xmm3/mem128</args>
+			<opc>XOP.mmmmm9.W1.xsrc.L0.NA 90 /r</opc>
+		</ins>
+		<ins>
+			<mnem>VPROTB</mnem>
+			<args>xmm1,xmm2/mem128,imm8</args>
+			<opc>XOP.mmmmm8.W0.1111.L0.NA C0 /r /ib</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VPROTD--Packed Rotate Doublewords.</brief>
+		<ins>
+			<mnem>VPROTD</mnem>
+			<args>xmm1,xmm2/mem128,xmm3</args>
+			<opc>XOP.mmmmm9.W0.xcnt.L0.NA 92 /r</opc>
+		</ins>
+		<ins>
+			<mnem>VPROTD</mnem>
+			<args>xmm1,xmm2,xmm3/mem128</args>
+			<opc>XOP.mmmmm9.W1.xsrc.L0.NA 92 /r</opc>
+		</ins>
+		<ins>
+			<mnem>VPROTD</mnem>
+			<args>xmm1,xmm2/mem128,imm8</args>
+			<opc>XOP.mmmmm8.W0.1111.L0.NA C2 /ib</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VPROTQ--Packed Rotate Quadwords.</brief>
+		<ins>
+			<mnem>VPROTQ</mnem>
+			<args>xmm1,xmm2/mem128,xmm3</args>
+			<opc>XOP.mmmmm9.W0.xcnt.L0.NA 93 /r</opc>
+		</ins>
+		<ins>
+			<mnem>VPROTQ</mnem>
+			<args>xmm1,xmm2,xmm3/mem128</args>
+			<opc>XOP.mmmmm9.W1.xsrc.L0.NA 93 /r</opc>
+		</ins>
+		<ins>
+			<mnem>VPROTQ</mnem>
+			<args>xmm1,xmm2/mem128,imm8</args>
+			<opc>XOP.mmmmm8.W0.1111.L0.NA C3 /ib</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VPROTW--Packed Rotate Words.</brief>
+		<ins>
+			<mnem>VPROTW</mnem>
+			<args>xmm1,xmm2/mem128,xmm3</args>
+			<opc>XOP.mmmmm9.W0.xcnt.L0.NA 91 /r</opc>
+		</ins>
+		<ins>
+			<mnem>VPROTW</mnem>
+			<args>xmm1,xmm2,xmm3/mem128</args>
+			<opc>XOP.mmmmm9.W1.xsrc.L0.NA 91 /r</opc>
+		</ins>
+		<ins>
+			<mnem>VPROTW</mnem>
+			<args>xmm1,xmm2/mem128,imm8</args>
+			<opc>XOP.mmmmm8.W0.1111.L0.NA C1 /r /ib</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VPSHAB--Packed Shift Arithmetic Bytes.</brief>
+		<ins>
+			<mnem>VPSHAB</mnem>
+			<args>xmm1,xmm2/mem128,xmm3</args>
+			<opc>XOP.mmmmm9.W0.xcnt.L0.NA 98 /r</opc>
+		</ins>
+		<ins>
+			<mnem>VPSHAB</mnem>
+			<args>xmm1,xmm2,xmm3/mem128</args>
+			<opc>XOP.mmmmm9.W1.xsrc.L0.NA 98 /r</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VPSHAD--Packed Shift Arithmetic Doublewords.</brief>
+		<ins>
+			<mnem>VPSHAD</mnem>
+			<args>xmm1,xmm2/mem128,xmm3</args>
+			<opc>XOP.mmmmm9.W0.xcnt.L0.NA 9A /r</opc>
+		</ins>
+		<ins>
+			<mnem>VPSHAD</mnem>
+			<args>xmm1,xmm2,xmm3/mem128</args>
+			<opc>XOP.mmmmm9.W1.xsrc.L0.NA 9A /r</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VPSHAQ--Packed Shift Arithmetic Quadwords.</brief>
+		<ins>
+			<mnem>VPSHAQ</mnem>
+			<args>xmm1,xmm2/mem128,xmm3</args>
+			<opc>XOP.mmmmm9.W0.xcnt.L0.NA 9B /r</opc>
+		</ins>
+		<ins>
+			<mnem>VPSHAQ</mnem>
+			<args>xmm1,xmm2,xmm3/mem128</args>
+			<opc>XOP.mmmmm9.W1.xsrc.L0.NA 9B /r</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VPSHAW--Packed Shift Arithmetic Words.</brief>
+		<ins>
+			<mnem>VPSHAW</mnem>
+			<args>xmm1,xmm2/mem128,xmm3</args>
+			<opc>XOP.mmmmm9.W0.xcnt.L0.NA 99 /r</opc>
+		</ins>
+		<ins>
+			<mnem>VPSHAW</mnem>
+			<args>xmm1,xmm2,xmm3/mem128</args>
+			<opc>XOP.mmmmm9.W1.xsrc.L0.NA 99 /r</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VPSHLB--Packed Shift Logical Bytes.</brief>
+		<ins>
+			<mnem>VPSHLB</mnem>
+			<args>xmm1,xmm2/mem128,xmm3</args>
+			<opc>XOP.mmmmm9.W0.xcnt.L0.NA 94 /r</opc>
+		</ins>
+		<ins>
+			<mnem>VPSHLB</mnem>
+			<args>xmm1,xmm2,xmm3/mem128</args>
+			<opc>XOP.mmmmm9.W1.xsrc.L0.NA 94 /r</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VPSHLD--Packed Shift Logical Doublewords.</brief>
+		<ins>
+			<mnem>VPSHLD</mnem>
+			<args>xmm1,xmm3/mem128,xmm2</args>
+			<opc>XOP.mmmmm9.W0.xcnt.L0.NA 96 /r</opc>
+		</ins>
+		<ins>
+			<mnem>VPSHLD</mnem>
+			<args>xmm1,xmm2,xmm3/mem128</args>
+			<opc>XOP.mmmmm9.W1.xsrc.L0.NA 96 /r</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VPSHLQ--Packed Shift Logical Quadwords.</brief>
+		<ins>
+			<mnem>VPSHLQ</mnem>
+			<args>xmm1,xmm3/mem128,xmm2</args>
+			<opc>XOP.mmmmm9.W0.xcnt.L0.NA 97 /r</opc>
+		</ins>
+		<ins>
+			<mnem>VPSHLQ</mnem>
+			<args>xmm1,xmm2,xmm3/mem128</args>
+			<opc>XOP.mmmmm9.W1.xsrc.L0.NA 97 /r</opc>
+		</ins>
+	</common>
+	<common>
+		<brief>VPSHLW--Packed Shift Logical Words.</brief>
+		<ins>
+			<mnem>VPSHLW</mnem>
+			<args>xmm1,xmm3/mem128,xmm2</args>
+			<opc>XOP.mmmmm9.W0.xcnt.L0.NA 95 /r</opc>
+		</ins>
+		<ins>
+			<mnem>VPSHLW</mnem>
+			<args>xmm1,xmm2,xmm3/mem128</args>
+			<opc>XOP.mmmmm9.W1.xsrc.L0.NA 95 /r</opc>
+		</ins>
+	</common>
+</instrs>

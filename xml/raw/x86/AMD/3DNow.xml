@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="ASCII"?>
+<!DOCTYPE instrs SYSTEM "3DNow_Rules.dtd">
+<!-- Copyright (c) 2015 Mahdi Safsafi
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+ -->
+<!--   https://github.com/MahdiSafsafi/Parsable-Instructions   -->
+<!-- 
+  This XML file includes all instructions found in :
+  3DNow! Technology Manual 21928G/0-March 2000 document.
+ -->
+<instrs version="1.00">
+	<common>
+		<brief>FEMMS</brief>
+		<ins>
+			<mnem>FEMMS</mnem>
+			<args>void</args>
+			<opc>0F 0E</opc>
+			<dscrp>Faster Enter/Exit of the MMX or floating-point state.</dscrp>
+		</ins>
+	</common>
+	<common>
+		<brief>PAVGUSB</brief>
+		<ins>
+			<mnem>PAVGUSB</mnem>
+			<args>mmreg1,mmreg2/mem64</args>
+			<opc>0F 0F  /r BF</opc>
+			<dscrp>Average of unsigned packed 8-bit values.</dscrp>
+		</ins>
+	</common>
+	<common>
+		<brief>PF2ID</brief>
+		<ins>
+			<mnem>PF2ID</mnem>
+			<args>mmreg1,mmreg2/mem64</args>
+			<opc>0F 0F /r 1D</opc>
+			<dscrp>Converts packed floating-point operand to packed 32-bit integer.</dscrp>
+		</ins>
+	</common>
+	<common>
+		<brief>PFACC</brief>
+		<ins>
+			<mnem>PFACC</mnem>
+			<args>mmreg1,mmreg2/mem64</args>
+			<opc>0F 0F /r AE</opc>
+			<dscrp>Floating-point accumulate.</dscrp>
+		</ins>
+	</common>
+	<common>
+		<brief>PFADD</brief>
+		<ins>
+			<mnem>PFADD</mnem>
+			<args>mmreg1,mmreg2/mem64</args>
+			<opc>0F 0F /r 9E</opc>
+			<dscrp>Packed, floating-point addition.</dscrp>
+		</ins>
+	</common>
+	<common>
+		<brief>PFCMPEQ</brief>
+		<ins>
+			<mnem>PFCMPEQ</mnem>
+			<args>mmreg1,mmreg2/mem64</args>
+			<opc>0F 0F /r B0</opc>
+			<dscrp>Packed floating-point comparison, equal to.</dscrp>
+		</ins>
+	</common>
+	<common>
+		<brief>PFCMPGE</brief>
+		<ins>
+			<mnem>PFCMPGE</mnem>
+			<args>mmreg1,mmreg2/mem64</args>
+			<opc>0F 0F /r 90</opc>
+			<dscrp>Packed floating-point comparison, greater than or equal to.</dscrp>
+		</ins>
+	</common>
+	<common>
+		<brief>PFCMPGT</brief>
+		<ins>
+			<mnem>PFCMPGT</mnem>
+			<args>mmreg1,mmreg2/mem64</args>
+			<opc>0F 0F /r A0</opc>
+			<dscrp>Packed floating-point comparison, greater than.</dscrp>
+		</ins>
+	</common>
+	<common>
+		<brief>PFMAX</brief>
+		<ins>
+			<mnem>PFMAX</mnem>
+			<args>mmreg1,mmreg2/mem64</args>
+			<opc>0F 0F /r A4</opc>
+			<dscrp>Packed floating-point maximum.</dscrp>
+		</ins>
+	</common>
+	<common>
+		<brief>PFMIN</brief>
+		<ins>
+			<mnem>PFMIN</mnem>
+			<args>mmreg1,mmreg2/mem64</args>
+			<opc>0F 0F /r 94</opc>
+			<dscrp>Packed floating-point minimum.</dscrp>
+		</ins>
+	</common>
+	<common>
+		<brief>PFMUL</brief>
+		<ins>
+			<mnem>PFMUL</mnem>
+			<args>mmreg1,mmreg2/mem64</args>
+			<opc>0F 0F /r B4</opc>
+			<dscrp>Packed floating-point multiplication.</dscrp>
+		</ins>
+	</common>
+	<common>
+		<brief>PFRCP</brief>
+		<ins>
+			<mnem>PFRCP</mnem>
+			<args>mmreg1,mmreg2/mem64</args>
+			<opc>0F 0F /r 96</opc>
+			<dscrp>Floating-point reciprocal approximation.</dscrp>
+		</ins>
+	</common>
+	<common>
+		<brief>PFRCPIT1</brief>
+		<ins>
+			<mnem>PFRCPIT1</mnem>
+			<args>mmreg1,mmreg2/mem64</args>
+			<opc>0F 0F /r A6</opc>
+			<dscrp>Packed floating-point reciprocal, first iteration step.</dscrp>
+		</ins>
+	</common>
+	<common>
+		<brief>PFRCPIT2</brief>
+		<ins>
+			<mnem>PFRCPIT2</mnem>
+			<args>mmreg1,mmreg2/mem64</args>
+			<opc>0F 0F /r B6</opc>
+			<dscrp>Packed  floating-point  reciprocal/reciprocal  square root, second iteration step.</dscrp>
+		</ins>
+	</common>
+	<common>
+		<brief>PFRSQIT1</brief>
+		<ins>
+			<mnem>PFRSQIT1</mnem>
+			<args>mmreg1,mmreg2/mem64</args>
+			<opc>0F 0F /r A7</opc>
+			<dscrp>Packed  floating-point  reciprocal  square  root,  first iteration step.</dscrp>
+		</ins>
+	</common>
+	<common>
+		<brief>PFRSQRT</brief>
+		<ins>
+			<mnem>PFRSQRT</mnem>
+			<args>mmreg1,mmreg2/mem64</args>
+			<opc>0F 0F /r 97</opc>
+			<dscrp>Floating-point reciprocal square root approximation.</dscrp>
+		</ins>
+	</common>
+	<common>
+		<brief>PFSUB</brief>
+		<ins>
+			<mnem>PFSUB</mnem>
+			<args>mmreg1,mmreg2/mem64</args>
+			<opc>0F 0F /r 9A</opc>
+			<dscrp>Packed floating-point subtraction.</dscrp>
+		</ins>
+	</common>
+	<common>
+		<brief>PFSUBR</brief>
+		<ins>
+			<mnem>PFSUBR</mnem>
+			<args>mmreg1,mmreg2/mem64</args>
+			<opc>0F 0F /r AA</opc>
+			<dscrp>Packed floating-point reverse subtraction.</dscrp>
+		</ins>
+	</common>
+	<common>
+		<brief>PI2FD</brief>
+		<ins>
+			<mnem>PI2FD</mnem>
+			<args>mmreg1,mmreg2/mem64</args>
+			<opc>0F 0F /r 0D</opc>
+			<dscrp>Packed 32-bit integer to floating-point conversion.</dscrp>
+		</ins>
+	</common>
+	<common>
+		<brief>PREFETCHW</brief>
+		<ins>
+			<mnem>PREFETCHW</mnem>
+			<args>mem8</args>
+			<opc>0F 0D</opc>
+			<dscrp>Prefetch processor cache line into L1 data cache (Dcache).</dscrp>
+		</ins>
+	</common>
+</instrs>
