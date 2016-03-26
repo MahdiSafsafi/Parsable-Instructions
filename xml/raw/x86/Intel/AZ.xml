@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <!DOCTYPE instrs SYSTEM "AZ_Rules.dtd">
-<!-- Copyright (c) 2015 Mahdi Safsafi
+<!-- Copyright (c) 2016 Mahdi Safsafi
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -11439,8 +11439,8 @@ THE SOFTWARE.
 		</ins>
 		<oprndenc openc="RM">
 			<oprnd1>ModRM:reg(r,w)</oprnd1>
-			<oprnd2>ModRM:r/m(r)                     &lt;XMM0&gt;</oprnd2>
-			<oprnd3>NA</oprnd3>
+			<oprnd2>ModRM:r/m(r)</oprnd2>
+			<oprnd3>implicit XMM0</oprnd3>
 			<oprnd4>NA</oprnd4>
 		</oprndenc>
 		<oprndenc openc="RVMR">
@@ -11499,8 +11499,7 @@ THE SOFTWARE.
 			<args>xmm1,xmm2/m128,imm8</args>
 			<opc openc="RMI">66 0F 3A 44 /r ib</opc>
 			<cpuid>
-				<flag>PCLMUL-</flag>
-				<flag>QDQ</flag>
+				<flag>PCLMULQDQ</flag>
 			</cpuid>
 			<dscrp>Carry-less multiplication of one quadword of xmm1 by one quadword of xmm2/m128, stores the 128-bit result in xmm1. The immediate is used to determine which quadwords of xmm1 and xmm2/m128 should be used.</dscrp>
 		</ins>
@@ -11509,8 +11508,7 @@ THE SOFTWARE.
 			<args>xmm1,xmm2,xmm3/m128,imm8</args>
 			<opc openc="RVMI">VEX.NDS.128.66.0F3A.WIG 44 /r ib</opc>
 			<cpuid>
-				<flag>PCL-</flag>
-				<flag>MULQDQ</flag>
+				<flag>PCLMULQDQ</flag>
 				<flag>AVX</flag>
 			</cpuid>
 			<dscrp>Carry-less multiplication of one quadword of xmm2 by one quadword of xmm3/m128, stores the 128-bit result in xmm1. The immediate is used to determine which quadwords of xmm2 and xmm3/m128 should be used.</dscrp>
