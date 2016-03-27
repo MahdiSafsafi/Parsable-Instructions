@@ -22,7 +22,7 @@ For each **XML file** there is a **DTD file** associated which is used to ensure
 - **raw.x86.Intel.AVX512_r24.xml**: Contains all instructions found in “Intel® Architecture Instruction Set Extensions Programming Reference 319433-024”.
 - **raw.x86.AMD.3DNow.xml**: Contains all instructions found in "AMD 3DNow! Technology Manual".
 - **raw.x86.AMD.SSE5.xml**: Contains all instructions found in "AMD 128-Bit SSE5 Instruction Set".
-- **raw.x86.AMD.XOP.xml**: Contains all instructions found in " AMD64 Architecture Programmers Manual Volume 6: 128-Bit and 256-Bit XOP and FMA4 Instructions".
+- **raw.x86.AMD.XOP.xml**: Contains all instructions found in "AMD64 Architecture Programmers Manual Volume 6: 128-Bit and 256-Bit XOP and FMA4 Instructions".
 
 \* means deprecated.
 
