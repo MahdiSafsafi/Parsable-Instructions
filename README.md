@@ -26,4 +26,67 @@ For each **XML file** there is a **DTD file** associated which is used to ensure
 
 \* means deprecated.
 
+## KEY TO ABBREVIATIONS
+  - **x32m** = 32-bit mode support.
+  - **x64m** = 64-bit mode support.
+  - **mnem** = Instruction Mnemonic.
+  - **args** = Instruction Arguments.
+  - **opc**  = Opcodes.
+  - **openc** = Operand Encoding name.
+  - **dscrp** = Description.
+  - **oprndenc** = Instruction Operand Encoding.
+  - **oprnd1** = Operand 1.
+  - **oprnd2** = Operand 2.
+  - **oprnd3** = Operand 3.
+  - **oprnd4** = Operand 4.
+
+***NOTE:*** FOR THE REST OF KEYS YOU SHOULD REFER TO INTEL/AMD DOCUMENTATIONS!
+
+## Example
+Here's a simple example of ADDPD instruction.
+```
+<common>
+	<brief>ADDPD--Add Packed Double-Precision Floating-Point Values.</brief>
+	<ins x32m="V" x64m="V">
+		<mnem>ADDPD</mnem>
+		<args>xmm1,xmm2/m128</args>
+		<opc openc="RM">66 0F 58 /r</opc>
+		<cpuid>
+			<flag>SSE2</flag>
+		</cpuid>
+		<dscrp>Add packed double-precision floating-point values from xmm2/m128 to xmm1.</dscrp>
+	</ins>
+	<ins x32m="V" x64m="V">
+		<mnem>VADDPD</mnem>
+		<args>xmm1,xmm2,xmm3/m128</args>
+		<opc openc="RVM">VEX.NDS.128.66.0F.WIG 58 /r</opc>
+		<cpuid>
+			<flag>AVX</flag>
+		</cpuid>
+		<dscrp>Add packed double-precision floating-point values from xmm3/mem to xmm2 and stores result in xmm1.</dscrp>
+	</ins>
+	<ins x32m="V" x64m="V">
+		<mnem>VADDPD</mnem>
+		<args>ymm1,ymm2,ymm3/m256</args>
+		<opc openc="RVM">VEX.NDS.256.66.0F.WIG 58 /r</opc>
+		<cpuid>
+			<flag>AVX</flag>
+		</cpuid>
+		<dscrp>Add packed double-precision floating-point values from ymm3/mem to ymm2 and stores result in ymm1.</dscrp>
+	</ins>
+	<oprndenc openc="RM">
+		<oprnd1>ModRM:reg(r,w)</oprnd1>
+		<oprnd2>ModRM:r/m(r)</oprnd2>
+		<oprnd3>NA</oprnd3>
+		<oprnd4>NA</oprnd4>
+	</oprndenc>
+	<oprndenc openc="RVM">
+		<oprnd1>ModRM:reg(w)</oprnd1>
+		<oprnd2>VEX.vvvv(r)</oprnd2>
+		<oprnd3>ModRM:r/m(r)</oprnd3>
+		<oprnd4>NA</oprnd4>
+	</oprndenc>
+</common>
+```
+
 [1]:111
