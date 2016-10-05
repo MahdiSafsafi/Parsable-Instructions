@@ -14198,7 +14198,7 @@ THE SOFTWARE.
 		<ins x32m="V" x64m="V">
 			<mnem>PREFETCHW</mnem>
 			<args>m8</args>
-			<opc openc="A">0F 0D /1</opc>
+			<opc openc="M">0F 0D /1</opc>
 			<cpuid>
 				<flag>PRFCHW</flag>
 			</cpuid>
