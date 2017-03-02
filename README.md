@@ -1,3 +1,8 @@
+# IMPORTANT:
+The project is dead ! No longer supported. 
+
+Consider using [opcodesDB](https://github.com/MahdiSafsafi/opcodesDB).
+
 # Parsable-Instructions
 List of all instructions found in *Intel* and *AMD* documentations, listed into ***XML files*** for easy parsing.
 Each instruction in the XML file contains:
